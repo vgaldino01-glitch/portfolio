@@ -2,128 +2,513 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfólio de Valéria Galdino, estudante de Cibersegurança.">
-  <title>Valéria Galdino | Portfólio</title>
-  <style>
-    :root { --bg:#0b1220; --panel:#121e31; --text:#edf4ff; --muted:#b8c6d9; --accent:#55d6c2; }
-    * { box-sizing:border-box; }
-    body { margin:0; font-family:Arial,Helvetica,sans-serif; background:linear-gradient(140deg,#08111f,#102744); color:var(--text); line-height:1.65; }
-    a { color:var(--accent); text-decoration:none; }
-    a:hover { text-decoration:underline; }
-    .wrap { width:min(1000px,92%); margin:auto; }
-    header { padding:76px 0 52px; }
-    .tag { color:var(--accent); text-transform:uppercase; letter-spacing:.13em; font-size:.82rem; font-weight:bold; }
-    h1 { font-size:clamp(2.3rem,6vw,4.3rem); line-height:1.08; margin:14px 0; }
-    h2 { font-size:1.7rem; margin:0 0 18px; }
-    .lead { max-width:720px; color:var(--muted); font-size:1.12rem; }
-    .links { display:flex; flex-wrap:wrap; gap:12px; margin-top:26px; }
-    .btn { display:inline-block; padding:11px 17px; border:1px solid #41617e; border-radius:10px; color:var(--text); }
-    .btn.primary { background:var(--accent); color:#06201f; border-color:var(--accent); font-weight:bold; }
-    section { padding:30px 0; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; }
-    .card { background:rgba(18,30,49,.92); border:1px solid #29415c; border-radius:16px; padding:23px; }
-    .card p { color:var(--muted); }
-    .small { color:var(--muted); font-size:.94rem; }
-    .pill { display:inline-block; border:1px solid #36556e; border-radius:30px; padding:4px 10px; margin:5px 5px 0 0; color:#d7e8f5; font-size:.85rem; }
-    footer { padding:38px 0 55px; color:var(--muted); border-top:1px solid #29415c; margin-top:35px; }
-    @media(max-width:600px) {
-      header { padding-top:54px; }
-      .btn { width:100%; text-align:center; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfólio profissional de Valéria Galdino, estudante de Cibersegurança.">
+<title>Valéria Galdino | Cyber Kawaii Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink: #f5b8dc;
+  --pink-light: #fff0f8;
+  --purple: #a98bd4;
+  --purple-dark: #73549b;
+  --lavender: #eee5ff;
+  --blue: #dceaff;
+  --text: #51415f;
+  --white: #ffffff;
+  --shadow: 0 12px 35px rgba(117, 79, 153, .12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 10% 10%, #ffe5f4 0, transparent 28%),
+    radial-gradient(circle at 90% 20%, #e7dcff 0, transparent 30%),
+    linear-gradient(135deg, #fff8fc, #f5f0ff, #fff7fb);
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1100px, 90%);
+  margin: auto;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 248, 252, .88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #f0d9ed;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 17px 0;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--purple-dark);
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  font-weight: 800;
+  font-size: .9rem;
+}
+
+.nav-links a:hover {
+  color: #d66eae;
+}
+
+.hero {
+  padding: 85px 0 70px;
+  text-align: center;
+}
+
+.eyebrow {
+  color: #c56ca8;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: .78rem;
+  font-weight: 900;
+}
+
+.profile-photo {
+  width: 190px;
+  height: 190px;
+  object-fit: cover;
+  object-position: center 35%;
+  border-radius: 50%;
+  border: 7px solid white;
+  box-shadow: 0 10px 35px rgba(129, 80, 181, .25);
+  margin: 25px auto;
+  display: block;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.1;
+  color: var(--purple-dark);
+  margin: 12px 0;
+  font-weight: 900;
+}
+
+.hero-description {
+  max-width: 720px;
+  margin: 18px auto;
+  font-size: 1.12rem;
+  color: #766681;
+}
+
+.highlight {
+  color: #ce76b0;
+  font-weight: 900;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 28px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 23px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #d995c8, #a88bd4);
+  color: white;
+  font-weight: 900;
+  box-shadow: var(--shadow);
+  transition: .2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn-outline {
+  background: white;
+  color: var(--purple-dark);
+  border: 1px solid #d9c3ec;
+}
+
+section {
+  padding: 55px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--purple-dark);
+  margin-bottom: 12px;
+  font-weight: 900;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #887895;
+  margin-bottom: 35px;
+}
+
+.about-card {
+  background: rgba(255,255,255,.82);
+  border: 1px solid #f0d9ed;
+  border-radius: 25px;
+  padding: 35px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.about-card p {
+  max-width: 800px;
+  margin: auto;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: rgba(255,255,255,.9);
+  border: 1px solid #eedaf0;
+  border-radius: 23px;
+  padding: 25px;
+  box-shadow: var(--shadow);
+  transition: .25s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #d4a4d2;
+}
+
+.card-label {
+  display: inline-block;
+  font-size: .73rem;
+  color: #bc65a3;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  margin-bottom: 13px;
+}
+
+.card h3 {
+  color: var(--purple-dark);
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: #796b83;
+  font-size: .95rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0;
+}
+
+.tag {
+  background: #f7eafa;
+  border: 1px solid #ead3ed;
+  color: #805e96;
+  padding: 5px 11px;
+  border-radius: 20px;
+  font-size: .78rem;
+  font-weight: 800;
+}
+
+.project-link {
+  display: inline-block;
+  color: #bd68a6;
+  font-weight: 900;
+  margin-top: 8px;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
+
+.skills-box {
+  background: linear-gradient(135deg, #fff, #f4eaff);
+  border: 1px solid #ead7f2;
+  border-radius: 25px;
+  padding: 30px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.skill {
+  background: white;
+  border: 1px solid #e7d4ee;
+  padding: 10px 17px;
+  border-radius: 25px;
+  font-weight: 800;
+  color: #80629b;
+}
+
+.contact-card {
+  text-align: center;
+  background: linear-gradient(135deg, #fce8f5, #eae1ff);
+  padding: 45px 25px;
+  border-radius: 28px;
+  border: 1px solid #ead6ef;
+  box-shadow: var(--shadow);
+}
+
+footer {
+  text-align: center;
+  padding: 30px 15px;
+  color: #927e9e;
+  font-size: .9rem;
+}
+
+footer strong {
+  color: var(--purple-dark);
+}
+
+@media (max-width: 650px) {
+  .nav-content {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    justify-content: center;
+    gap: 13px;
+  }
+
+  .hero {
+    padding-top: 55px;
+  }
+
+  .about-card {
+    padding: 24px;
+  }
+
+  .section-title {
+    font-size: 1.65rem;
+  }
+}
+</style>
 </head>
+
 <body>
-  <header class="wrap">
-    <div class="tag">Portfólio profissional</div>
-    <h1>Valéria Galdino</h1>
-    <p class="lead"><strong>Estudante de Cibersegurança</strong> interessada em segurança da informação, tecnologia e no uso responsável de ferramentas digitais. Este espaço reúne meus estudos e projetos.</p>
-    <div class="links">
-      <a class="btn primary" href="https://github.com/vgaldino01-glitch" target="_blank" rel="noopener">Meu GitHub</a>
-      <a class="btn" href="https://www.linkedin.com/in/val%C3%A9ria-galdino-ferreira-666b1762/" target="_blank" rel="noopener">Meu LinkedIn</a>
+
+<nav>
+  <div class="container nav-content">
+    <a class="logo" href="#inicio">♡ Valéria Galdino</a>
+    <div class="nav-links">
+      <a href="#sobre">Sobre mim</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#conhecimentos">Conhecimentos</a>
+      <a href="#contato">Contato</a>
     </div>
-  </header>
+  </div>
+</nav>
 
-  <main class="wrap">
-    <section>
-      <h2>Sobre mim</h2>
-      <div class="card">
-        <p>Sou estudante de Cibersegurança e estou construindo minha trajetória na área de tecnologia. Utilizo este portfólio para documentar minha evolução, apresentar projetos e compartilhar experiências de aprendizagem.</p>
-        <p class="small">Os projetos apresentados têm caráter acadêmico e de estudo. As descrições distinguem experiências práticas, atividades de extensão e exercícios de programação.</p>
+<header class="hero" id="inicio">
+  <div class="container">
+    <p class="eyebrow">✧ Cyber Kawaii • Tecnologia com propósito ✧</p>
+
+    <img
+      src="assets/foto-valeria.jpeg"
+      alt="Foto de perfil de Valéria Galdino"
+      class="profile-photo"
+    >
+
+    <h1>Valéria Galdino</h1>
+
+    <p class="hero-description">
+      Estudante de <span class="highlight">Cibersegurança</span>,
+      apaixonada por tecnologia, segurança da informação e
+      aprendizado contínuo.
+      <br>
+      Acredito que tecnologia também pode ter delicadeza,
+      criatividade e personalidade. ♡
+    </p>
+
+    <div class="buttons">
+      <a class="btn" href="https://github.com/vgaldino01-glitch" target="_blank" rel="noopener noreferrer">Meu GitHub ✧</a>
+      <a class="btn btn-outline" href="https://www.linkedin.com/in/val%C3%A9ria-galdino-ferreira-666b1762/" target="_blank" rel="noopener noreferrer">Meu LinkedIn ♡</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section id="sobre">
+  <div class="container">
+    <h2 class="section-title">♡ Sobre mim</h2>
+    <p class="section-subtitle">Conhecimento, curiosidade e evolução constante.</p>
+
+    <div class="about-card">
+      <p>
+        Sou estudante de Cibersegurança e estou construindo minha
+        trajetória na área de tecnologia. Tenho interesse em
+        segurança da informação, programação, privacidade e
+        proteção de dados.
+        <br><br>
+        Utilizo este espaço para compartilhar meus projetos,
+        registrar minha evolução e apresentar experiências
+        acadêmicas e práticas de aprendizagem.
+        <br><br>
+        Minha identidade une o universo da tecnologia a uma
+        estética delicada e criativa. Porque segurança digital
+        também pode ser acolhedora, acessível e inspiradora. ✨
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="projetos">
+  <div class="container">
+    <h2 class="section-title">✧ Meus projetos</h2>
+    <p class="section-subtitle">Pequenos projetos, grandes passos na minha jornada.</p>
+
+    <div class="cards">
+
+      <article class="card">
+        <span class="card-label">Projeto acadêmico de extensão</span>
+        <h3>🌈 Esporte para Todos: Informação e Inclusão Social em Sorocaba</h3>
+        <p>
+          Projeto de mobilização digital para organizar e divulgar
+          informações públicas sobre atividades esportivas gratuitas
+          no município de Sorocaba. Relaciona acesso à informação,
+          inclusão social e cuidados com privacidade.
+        </p>
+        <div class="tags">
+          <span class="tag">Mobilização digital</span>
+          <span class="tag">Acesso à informação</span>
+          <span class="tag">Privacidade</span>
+          <span class="tag">ODS 10</span>
+        </div>
+        <a class="project-link" href="https://github.com/vgaldino01-glitch/esporte-para-todos" target="_blank" rel="noopener noreferrer">Ver projeto no GitHub →</a>
+      </article>
+
+      <article class="card">
+        <span class="card-label">Python • Projeto de estudo</span>
+        <h3>🔐 Gerador de Senhas</h3>
+        <p>
+          Projeto em Python para praticar programação e conceitos
+          relacionados à criação de senhas mais seguras, com opções
+          de tamanho e uso de letras, números e símbolos.
+        </p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Lógica de programação</span>
+          <span class="tag">Senhas</span>
+        </div>
+        <a class="project-link" href="https://github.com/vgaldino01-glitch/password-generator" target="_blank" rel="noopener noreferrer">Ver repositório no GitHub →</a>
+      </article>
+
+      <article class="card">
+        <span class="card-label">Python • Projeto de estudo</span>
+        <h3>🧮 Calculadora em Python</h3>
+        <p>
+          Aplicação simples que realiza operações matemáticas básicas
+          a partir da entrada de dados do usuário. Desenvolvida para
+          praticar lógica de programação e fundamentos da linguagem Python.
+        </p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Soma</span>
+          <span class="tag">Subtração</span>
+          <span class="tag">Multiplicação</span>
+          <span class="tag">Divisão</span>
+        </div>
+        <a class="project-link" href="https://github.com/vgaldino01-glitch/projeto-python" target="_blank" rel="noopener noreferrer">Ver repositório no GitHub →</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="conhecimentos">
+  <div class="container">
+    <h2 class="section-title">🪄 Interesses de aprendizagem</h2>
+    <p class="section-subtitle">Temas que fazem parte da minha jornada.</p>
+
+    <div class="skills-box">
+      <div class="skills">
+        <span class="skill">Cibersegurança</span>
+        <span class="skill">Segurança da informação</span>
+        <span class="skill">Python</span>
+        <span class="skill">Lógica de programação</span>
+        <span class="skill">Privacidade</span>
+        <span class="skill">Proteção de dados</span>
+        <span class="skill">Tecnologia responsável</span>
+        <span class="skill">Aprendizado contínuo</span>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section>
-      <h2>Projetos</h2>
-      <div class="grid">
+<section id="contato">
+  <div class="container">
+    <div class="contact-card">
+      <h2 class="section-title">♡ Vamos nos conectar?</h2>
+      <p>
+        Estou construindo minha trajetória em tecnologia e aberta
+        a oportunidades de aprendizagem, conexões profissionais
+        e novos desafios.
+      </p>
 
-        <article class="card">
-          <div class="tag">Projeto acadêmico de extensão</div>
-          <h3>Esporte para Todos: Informação e Inclusão Social em Sorocaba</h3>
-          <p>Projeto de mobilização digital para organizar e divulgar informações públicas sobre atividades esportivas gratuitas no município de Sorocaba. Relaciona acesso à informação, inclusão social e cuidados com privacidade.</p>
-          <p>
-            <span class="pill">Mobilização digital</span>
-            <span class="pill">Acesso à informação</span>
-            <span class="pill">Privacidade</span>
-            <span class="pill">ODS 10</span>
-          </p>
-          <a href="https://github.com/vgaldino01-glitch/esporte-para-todos" target="_blank" rel="noopener">Ver projeto no GitHub →</a>
-        </article>
-
-        <article class="card">
-          <div class="tag">Python • Projeto de estudo</div>
-          <h3>Gerador de senhas</h3>
-          <p>Projeto em Python para praticar programação e conceitos relacionados à criação de senhas mais seguras, com opções de tamanho e uso de letras, números e símbolos.</p>
-          <p>
-            <span class="pill">Python</span>
-            <span class="pill">Lógica de programação</span>
-            <span class="pill">Senhas</span>
-          </p>
-          <a href="https://github.com/vgaldino01-glitch/password-generator" target="_blank" rel="noopener">Ver repositório no GitHub →</a>
-        </article>
-
-        <article class="card">
-          <div class="tag">Python • Projeto de estudo</div>
-          <h3>Calculadora em Python</h3>
-          <p>Aplicação simples que realiza operações matemáticas básicas a partir da entrada de dados do usuário. Desenvolvida para praticar lógica de programação e fundamentos da linguagem Python.</p>
-          <p>
-            <span class="pill">Python</span>
-            <span class="pill">Soma</span>
-            <span class="pill">Subtração</span>
-            <span class="pill">Multiplicação</span>
-            <span class="pill">Divisão</span>
-          </p>
-          <a href="https://github.com/vgaldino01-glitch/projeto-python" target="_blank" rel="noopener">Ver repositório no GitHub →</a>
-        </article>
-
+      <div class="buttons">
+        <a class="btn" href="https://www.linkedin.com/in/val%C3%A9ria-galdino-ferreira-666b1762/" target="_blank" rel="noopener noreferrer">Conectar no LinkedIn</a>
+        <a class="btn btn-outline" href="https://github.com/vgaldino01-glitch" target="_blank" rel="noopener noreferrer">Explorar meu GitHub</a>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section>
-      <h2>Interesses de aprendizagem</h2>
-      <div class="card">
-        <span class="pill">Cibersegurança</span>
-        <span class="pill">Segurança da informação</span>
-        <span class="pill">Python</span>
-        <span class="pill">Privacidade e proteção de dados</span>
-        <span class="pill">Tecnologia responsável</span>
-        <p class="small">Esta seção representa áreas de estudo e interesse, não uma lista de certificações ou competências profissionais.</p>
-      </div>
-    </section>
+</main>
 
-    <section>
-      <h2>Contato</h2>
-      <div class="card">
-        <p>Para conhecer meus projetos e acompanhar minha evolução:</p>
-        <p><a href="https://github.com/vgaldino01-glitch" target="_blank" rel="noopener">github.com/vgaldino01-glitch</a></p>
-        <p><a href="https://www.linkedin.com/in/val%C3%A9ria-galdino-ferreira-666b1762/" target="_blank" rel="noopener">Perfil no LinkedIn</a></p>
-      </div>
-    </section>
-  </main>
+<footer>
+  <p>Feito com ♡ por <strong>Valéria Galdino</strong></p>
+  <p>✧ Tecnologia com propósito, criatividade e segurança. ✧</p>
+</footer>
 
-  <footer>
-    <div class="wrap">© 2026 Valéria Galdino • Portfólio em desenvolvimento</div>
-  </footer>
 </body>
 </html>
