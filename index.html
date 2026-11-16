@@ -2,586 +2,409 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#281052">
-<meta name="description" content="Portfólio profissional de Valéria Galdino — estudante de Cibersegurança, tecnologia e segurança da informação.">
-<title>Valéria Galdino | Cyber Kawaii</title>
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Pacifico&display=swap');
-
-:root {
-  --purple: #351064;
-  --deep: #190b3b;
-  --pink: #ff4bc7;
-  --pink-light: #ffd5f5;
-  --blue: #65dfff;
-  --lavender: #cba6ff;
-  --white: #fff7ff;
-}
-
-* { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
-
-body {
-  margin: 0;
-  font-family: 'Nunito', sans-serif;
-  color: white;
-  background:
-    radial-gradient(circle at 10% 15%, #8e35c9 0, transparent 25%),
-    radial-gradient(circle at 90% 30%, #4424a0 0, transparent 30%),
-    linear-gradient(135deg, #17082f, #351064 55%, #190b3b);
-  overflow-x: hidden;
-}
-
-body::before {
-  content: "✦  ♡  ✧  ✦  ♡  ✧  ✦";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  opacity: .12;
-  color: #fff;
-  font-size: 35px;
-  letter-spacing: 35px;
-  line-height: 100px;
-  z-index: -1;
-}
-
-a { color: inherit; text-decoration: none; }
-
-.container {
-  width: min(1380px, 94%);
-  margin: auto;
-}
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: rgba(28, 9, 65, .92);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid #ff70d8;
-  box-shadow: 0 0 22px #f04bc855;
-}
-
-nav {
-  min-height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 900;
-  font-size: 20px;
-}
-
-.brand-icon {
-  font-size: 35px;
-  color: var(--pink);
-  text-shadow: 0 0 15px var(--pink);
-}
-
-.brand small {
-  display: block;
-  font-size: 12px;
-  color: var(--pink-light);
-}
-
-.nav-links {
-  display: flex;
-  gap: 22px;
-  align-items: center;
-  flex-wrap: wrap;
-  font-weight: 800;
-}
-
-.nav-links a {
-  transition: .25s;
-}
-
-.nav-links a:hover {
-  color: var(--pink-light);
-  text-shadow: 0 0 12px var(--pink);
-}
-
-.hero {
-  padding: 55px 0 45px;
-  display: grid;
-  grid-template-columns: 260px 1fr 330px;
-  gap: 30px;
-  align-items: center;
-  position: relative;
-}
-
-.hero::after {
-  content: "✦";
-  position: absolute;
-  right: 30%;
-  top: 25px;
-  color: #ff8cde;
-  font-size: 45px;
-  text-shadow: 0 0 20px #ff4bc7;
-  animation: sparkle 3s infinite;
-}
-
-@keyframes sparkle {
-  50% { transform: rotate(35deg) scale(1.3); opacity: .55; }
-}
-
-.profile-wrap {
-  position: relative;
-  width: 245px;
-  height: 245px;
-  border-radius: 50%;
-  padding: 7px;
-  background: linear-gradient(135deg, #ff48ce, #a46bff, #55e6ff);
-  box-shadow: 0 0 20px #ff4bc7, 0 0 45px #a85cff88;
-}
-
-.profile-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 5px solid #2a1054;
-}
-
-.profile-label {
-  position: absolute;
-  bottom: 8px;
-  left: 5px;
-  background: #6e2ca0;
-  border: 2px solid white;
-  padding: 7px 12px;
-  border-radius: 30px;
-  font-size: 12px;
-  font-weight: 900;
-  transform: rotate(-12deg);
-}
-
-.hero-copy .eyebrow {
-  color: #ff9ce3;
-  letter-spacing: 3px;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
-.script {
-  font-family: 'Pacifico', cursive;
-  color: white;
-  font-weight: 400;
-  text-shadow: 0 0 15px #ff4bc7;
-}
-
-h1 {
-  font-size: clamp(38px, 5vw, 66px);
-  margin: 10px 0;
-  line-height: 1.15;
-}
-
-.hero-copy p {
-  color: #f5e8ff;
-  font-size: 17px;
-  line-height: 1.65;
-  max-width: 680px;
-}
-
-.hero-art {
-  text-align: center;
-  font-size: 110px;
-  filter: drop-shadow(0 0 18px #ff67d8);
-}
-
-.hero-art p {
-  font-size: 15px;
-  color: #fbdcff;
-  font-weight: 800;
-}
-
-.buttons {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  margin-top: 25px;
-}
-
-.btn {
-  display: inline-block;
-  border: 2px solid #ff8cde;
-  border-radius: 40px;
-  padding: 12px 22px;
-  font-weight: 900;
-  background: linear-gradient(120deg, #ff43c5, #9d55e9);
-  box-shadow: 0 0 18px #ff4bc777;
-  transition: .25s;
-}
-
-.btn.secondary {
-  background: #2c1558;
-  border-color: #b88cff;
-}
-
-.btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 28px #ff4bc7;
-}
-
-.section-title {
-  text-align: center;
-  font-family: 'Pacifico', cursive;
-  font-size: clamp(27px, 4vw, 38px);
-  color: #fff;
-  text-shadow: 0 0 15px #ff4bc7;
-  margin: 30px 0;
-}
-
-.section-title span { color: #ff8cde; }
-
-.panel {
-  border: 1px solid #ff8cde;
-  background: linear-gradient(145deg, #6d2e9caa, #281052dd);
-  border-radius: 25px;
-  padding: 25px;
-  box-shadow: 0 0 20px #d64bff44, inset 0 0 20px #ffffff0d;
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-bottom: 45px;
-}
-
-.about-grid h3 {
-  color: #ffc6ef;
-  font-size: 21px;
-}
-
-.about-grid p {
-  line-height: 1.7;
-  color: #f5e8ff;
-}
-
-.projects {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-
-.project-card {
-  border: 2px solid #ffb2e8;
-  border-radius: 28px;
-  padding: 24px;
-  text-align: center;
-  color: #351064;
-  background: linear-gradient(145deg, #ffe3fa, #d9c5ff);
-  box-shadow: 0 0 22px #ff4bc755;
-  transition: .3s;
-}
-
-.project-card:nth-child(2) {
-  background: linear-gradient(145deg, #e6d5ff, #fce2ff);
-}
-
-.project-card:nth-child(3) {
-  background: linear-gradient(145deg, #fff0df, #ffd8f0);
-}
-
-.project-card:hover {
-  transform: translateY(-9px) rotate(-1deg);
-  box-shadow: 0 0 30px #ff4bc7;
-}
-
-.project-icon {
-  font-size: 65px;
-  margin-bottom: 10px;
-  filter: drop-shadow(0 4px 5px #8a3caa55);
-}
-
-.project-card h3 {
-  font-size: 23px;
-  margin: 8px 0;
-  color: #6b1b88;
-}
-
-.project-card p {
-  line-height: 1.55;
-  min-height: 105px;
-}
-
-.project-link {
-  display: inline-block;
-  background: white;
-  color: #78166f;
-  border: 2px solid #ed55bd;
-  border-radius: 30px;
-  padding: 10px 20px;
-  font-weight: 900;
-  margin-top: 12px;
-  transition: .2s;
-}
-
-.project-link:hover {
-  background: #ffdbf4;
-  transform: scale(1.04);
-}
-
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 14px;
-}
-
-.skill {
-  padding: 14px 22px;
-  border-radius: 30px;
-  border: 1px solid #ff8cde;
-  background: #55217e;
-  box-shadow: 0 0 12px #e64bc755;
-  font-weight: 800;
-}
-
-.journey {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-}
-
-.journey-item {
-  text-align: center;
-  padding: 22px 12px;
-  border-radius: 20px;
-  background: #ffffff12;
-  border: 1px solid #b987ff;
-}
-
-.journey-item strong {
-  display: block;
-  color: #ffb5eb;
-  font-size: 24px;
-}
-
-.contact {
-  text-align: center;
-  padding: 40px 20px 65px;
-}
-
-.contact p {
-  color: #f6e7ff;
-  font-size: 17px;
-}
-
-footer {
-  text-align: center;
-  padding: 25px;
-  color: #f5d7ff;
-  background: #17082f99;
-  border-top: 1px solid #ff70d8;
-}
-
-footer .script { font-size: 23px; }
-
-@media (max-width: 950px) {
-  .hero {
-    grid-template-columns: 220px 1fr;
-  }
-  .hero-art { display: none; }
-  .about-grid { grid-template-columns: 1fr; }
-  .projects { grid-template-columns: 1fr 1fr; }
-  .journey { grid-template-columns: 1fr 1fr; }
-}
-
-@media (max-width: 600px) {
-  nav { justify-content: center; padding: 15px 0; }
-  .nav-links { justify-content: center; gap: 14px; font-size: 13px; }
-  .hero { grid-template-columns: 1fr; text-align: center; justify-items: center; }
-  .hero-copy p { font-size: 15px; }
-  .buttons { justify-content: center; }
-  .projects { grid-template-columns: 1fr; }
-  .journey { grid-template-columns: 1fr 1fr; }
-  .profile-wrap { width: 205px; height: 205px; }
-}
-</style>
-</head>
-
-<body>
-
-<header>
-  <div class="container">
-    <nav>
-      <a class="brand" href="#inicio">
-        <span class="brand-icon">🛡️</span>
-        <span>Valéria Galdino<small>Portfólio | Cibersegurança 💗</small></span>
-      </a>
-      <div class="nav-links">
-        <a href="#inicio">⌂ Início</a>
-        <a href="#sobre">♡ Sobre mim</a>
-        <a href="#projetos">〈/〉 Projetos</a>
-        <a href="#habilidades">✧ Habilidades</a>
-        <a href="#jornada">☆ Jornada</a>
-        <a href="#contato">✉ Contato</a>
-      </div>
-    </nav>
-  </div>
-</header>
-
-<main class="container">
-
-<section class="hero" id="inicio">
-  <div class="profile-wrap">
-    <img src="valeria%20profile.jpeg" alt="Foto de perfil de Valéria Galdino">
-    <span class="profile-label">#OPENTOWORK</span>
-  </div>
-
-  <div class="hero-copy">
-    <div class="eyebrow">✧ Cyber Kawaii • Tecnologia com propósito ✧</div>
-    <h1 class="script">Olá, eu sou a<br>Valéria Galdino ♡</h1>
-    <strong>Estudante de Cibersegurança | Segurança da Informação</strong><br>
-    <strong>Transição para Tecnologia | PCD</strong>
-    <p>
-      Apaixonada por tecnologia, segurança da informação e por transformar
-      aprendizado em projetos práticos, criativos e com impacto real. 💗
-      Acredito que a tecnologia também pode ter delicadeza, criatividade e personalidade.
-    </p>
-    <div class="buttons">
-      <a class="btn" href="#projetos">🚀 Conheça meus projetos</a>
-      <a class="btn secondary" href="https://www.linkedin.com/in/val%C3%A9ria-galdino-ferreira-666b1762/" target="_blank">Meu LinkedIn ♡</a>
-    </div>
-  </div>
-
-  <div class="hero-art">
-    🐱💻
-    <p>Aprender • Praticar • Projetar • Evoluir ♡</p>
-    <div>🔐 🦄 🌈</div>
-  </div>
-</section>
-
-<section id="sobre">
-  <h2 class="section-title"><span>✦</span> Um pouquinho sobre mim <span>✦</span></h2>
-  <div class="about-grid">
-    <article class="panel">
-      <h3>🎀 Minha essência</h3>
-      <p>
-        Sou estudante de Cibersegurança e estou construindo minha trajetória
-        na tecnologia. Gosto de aprender, experimentar e transformar ideias
-        em projetos.
-      </p>
-    </article>
-    <article class="panel">
-      <h3>🔐 Meu propósito</h3>
-      <p>
-        Quero contribuir para um ambiente digital mais seguro, acessível
-        e consciente, unindo conhecimento técnico, responsabilidade e criatividade.
-      </p>
-    </article>
-    <article class="panel">
-      <h3>🌷 Minha identidade</h3>
-      <p>
-        Acredito que mulheres podem ocupar todos os espaços da tecnologia
-        sem abrir mão da própria personalidade. Minha marca é delicada,
-        curiosa e comprometida com a evolução.
-      </p>
-    </article>
-  </div>
-</section>
-
-<section id="projetos">
-  <h2 class="section-title"><span>✦</span> Meus projetos em destaque <span>✦</span></h2>
-
-  <div class="projects">
-    <article class="project-card">
-      <div class="project-icon">⚽🌸</div>
-      <h3>Esporte para Todos</h3>
-      <p>
-        Projeto acadêmico de extensão sobre mobilização digital,
-        acesso à informação e inclusão social em Sorocaba.
-      </p>
-      <a class="project-link" href="https://github.com/vgaldino01-glitch/esporte-para-todos" target="_blank">Ver projeto ↗</a>
-    </article>
-
-    <article class="project-card">
-      <div class="project-icon">💻🔐</div>
-      <h3>Gerador de Senhas</h3>
-      <p>
-        Projeto em Python para criação de senhas, com opções de tamanho
-        e uso de letras, números e símbolos.
-      </p>
-      <a class="project-link" href="https://github.com/vgaldino01-glitch/password-generator" target="_blank">Ver projeto ↗</a>
-    </article>
-
-    <article class="project-card">
-      <div class="project-icon">🧮💗</div>
-      <h3>Calculadora em Python</h3>
-      <p>
-        Aplicação simples com operações matemáticas básicas,
-        desenvolvida para praticar lógica de programação e fundamentos de Python.
-      </p>
-      <a class="project-link" href="https://github.com/vgaldino01-glitch/projeto-python" target="_blank">Ver projeto ↗</a>
-    </article>
-  </div>
-</section>
-
-<section id="habilidades">
-  <h2 class="section-title"><span>✦</span> Habilidades e interesses <span>✦</span></h2>
-  <div class="panel">
-    <div class="skills">
-      <span class="skill">🐍 Python</span>
-      <span class="skill">〈/〉 Lógica de programação</span>
-      <span class="skill">🛡️ Segurança da Informação</span>
-      <span class="skill">🐙 Git e GitHub</span>
-      <span class="skill">📚 Documentação</span>
-      <span class="skill">🔒 Privacidade e proteção de dados</span>
-      <span class="skill">🌐 Tecnologia responsável</span>
-    </div>
-  </div>
-</section>
-
-<section id="jornada">
-  <h2 class="section-title"><span>✦</span> Minha jornada em evolução <span>✦</span></h2>
-  <div class="journey">
-    <div class="journey-item">
-      <strong>🎓</strong>
-      Graduação em Cibersegurança em andamento
-    </div>
-    <div class="journey-item">
-      <strong>🐍</strong>
-      Estudos e projetos com Python
-    </div>
-    <div class="journey-item">
-      <strong>🔐</strong>
-      Foco em Segurança da Informação
-    </div>
-    <div class="journey-item">
-      <strong>🌱</strong>
-      Aprendizado contínuo
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contato">
-  <h2 class="section-title">Vamos nos conectar? 💌</h2>
-  <p>Estou aberta a oportunidades, conexões e novas experiências na tecnologia.</p>
-  <div class="buttons" style="justify-content:center">
-    <a class="btn" href="https://www.linkedin.com/in/val%C3%A9ria-galdino-ferreira-666b1762/" target="_blank">LinkedIn ♡</a>
-    <a class="btn secondary" href="https://github.com/vgaldino01-glitch" target="_blank">GitHub ✧</a>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <div class="script">Tecnologia com propósito, inclusão e segurança para todos! ♡</div>
-  <p>© 2026 Valéria Galdino • Feito com carinho, código e criatividade ✨</p>
-</footer>
-
-</body>
-</html>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio profissional de Valéria Galdino Ferreira — estudante de Cibersegurança, projetos em Python e Segurança da Informação.">
+  <title>Valéria Galdino | Portfólio</title>
+
+  <style>
+    :root {
+      --bg: #100820;
+      --bg-light: #1b1034;
+      --panel: rgba(39, 20, 67, 0.82);
+      --pink: #ff69d4;
+      --pink-light: #ffb6ed;
+      --purple: #b78aff;
+      --blue: #8d8aff;
+      --text: #fff5ff;
+      --muted: #d2c1e8;
+      --border: rgba(255, 151, 237, 0.35);
+      --glow: 0 0 22px rgba(255, 75, 214, 0.32);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(ellipse at 15% 10%, #4b176f 0%, transparent 38%),
+        radial-gradient(ellipse at 85% 30%, #30206b 0%, transparent 40%),
+        linear-gradient(145deg, #100820, #1a0d32 55%, #281044);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .22;
+      z-index: -1;
+      background-image:
+        radial-gradient(circle, #ffb6ed 1px, transparent 1.5px),
+        radial-gradient(circle, #a78bfa 1px, transparent 1.5px);
+      background-size: 85px 85px, 125px 125px;
+      background-position: 0 0, 35px 45px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(18, 8, 34, .9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 5px 24px rgba(0, 0, 0, .2);
+    }
+
+    .navbar {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--pink-light);
+      letter-spacing: .5px;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--muted);
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--text);
+      font-size: .9rem;
+      transition: .25s;
+    }
+
+    nav a:hover {
+      color: var(--pink);
+      text-shadow: 0 0 12px var(--pink);
+    }
+
+    .hero {
+      min-height: 680px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 55px;
+      padding: 75px 0;
+    }
+
+    .eyebrow {
+      color: var(--pink);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: .78rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 1.05;
+      margin-bottom: 22px;
+      color: white;
+    }
+
+    h1 span {
+      color: var(--pink-light);
+      text-shadow: 0 0 25px rgba(255, 105, 212, .55);
+    }
+
+    .hero-text {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 590px;
+      margin-bottom: 30px;
+    }
+
+    .hero-text strong {
+      color: var(--pink-light);
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 24px;
+      border-radius: 30px;
+      border: 1px solid var(--pink);
+      color: white;
+      font-weight: 700;
+      transition: .3s;
+      cursor: pointer;
+    }
+
+    .button.primary {
+      background: linear-gradient(110deg, #e94fc0, #9d5be7);
+      box-shadow: var(--glow);
+    }
+
+    .button.secondary {
+      background: rgba(255,255,255,.05);
+    }
+
+    .button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 28px rgba(255, 105, 212, .55);
+    }
+
+    .profile-area {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .profile-frame {
+      width: min(350px, 78vw);
+      aspect-ratio: 1;
+      padding: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff64d7, #a77aff, #ffb3e9);
+      box-shadow:
+        0 0 20px #f65bd4,
+        0 0 60px rgba(172, 95, 255, .55);
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .profile-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+      border: 5px solid #24103b;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    section {
+      padding: 85px 0;
+      scroll-margin-top: 85px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title p {
+      color: var(--pink);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: .75rem;
+      font-weight: 800;
+    }
+
+    .section-title h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-top: 8px;
+    }
+
+    .section-title h2 span {
+      color: var(--pink-light);
+    }
+
+    .about-box {
+      max-width: 900px;
+      margin: auto;
+      padding: 35px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--glow);
+    }
+
+    .about-box p {
+      color: var(--muted);
+      margin-bottom: 15px;
+    }
+
+    .about-box strong {
+      color: var(--pink-light);
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 350px;
+      padding: 27px;
+      border-radius: 22px;
+      background: linear-gradient(145deg, rgba(67, 35, 101, .9), rgba(27, 15, 49, .95));
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 35px rgba(0,0,0,.2);
+      transition: .3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-9px);
+      border-color: var(--pink);
+      box-shadow: 0 0 28px rgba(255, 105, 212, .28);
+    }
+
+    .project-type {
+      color: var(--pink);
+      text-transform: uppercase;
+      font-size: .72rem;
+      letter-spacing: 2px;
+      font-weight: 800;
+      margin-bottom: 17px;
+    }
+
+    .project-card h3 {
+      font-size: 1.35rem;
+      line-height: 1.3;
+      margin-bottom: 15px;
+      color: var(--pink-light);
+    }
+
+    .project-card p {
+      color: var(--muted);
+      font-size: .94rem;
+      margin-bottom: 20px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+      margin-bottom: 22px;
+    }
+
+    .tag {
+      padding: 5px 11px;
+      border: 1px solid rgba(255, 153, 234, .45);
+      border-radius: 30px;
+      color: #f5d9ff;
+      font-size: .75rem;
+    }
+
+    .project-link {
+      color: var(--pink-light);
+      font-weight: 800;
+      transition: .2s;
+    }
+
+    .project-link:hover {
+      color: white;
+      text-shadow: 0 0 12px var(--pink);
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .skill {
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(40, 22, 66, .75);
+      transition: .3s;
+    }
+
+    .skill:hover {
+      border-color: var(--pink);
+      transform: translateY(-5px);
+    }
+
+    .skill h3 {
+      color: var(--pink-light);
+      margin-bottom: 8px;
+    }
+
+    .skill p {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .journey {
+      max-width: 800px;
+      margin: auto;
+      border-left: 2px solid var(--pink);
+      padding-left: 30px;
+    }
+
+    .journey-item {
+      position: relative;
+      margin-bottom: 35px;
+      padding: 22px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+
+    .journey-item::before {
+      content: "";
+      position: absolute;
+      left: -39px;
+      top: 27px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--pink);
+      box-shadow: 0 0 15px var(--pink);
+    }
+
+    .journey-item h3 {
+      color: var(--pink-light);
+      margin-bottom: 7px;
+    }
+
+    .journey-item p {
+      color: var(--muted);
+    }
+
+    .contact-box
