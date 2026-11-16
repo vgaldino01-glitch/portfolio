@@ -4,348 +4,606 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#16082f">
-<meta name="description" content="Portfólio de Valéria Galdino - estudante de Cibersegurança.">
+<meta name="theme-color" content="#f8eafa">
+<meta name="description" content="Portfólio de Valéria Galdino Ferreira. Estudante de Cibersegurança e Segurança da Informação.">
+
 <title>Valéria Galdino | Portfólio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --fundo: #130627;
-  --roxo: #8d45d9;
-  --rosa: #ff4acb;
-  --rosa-claro: #ffb5eb;
-  --branco: #fff8ff;
-  --texto: #eadcf7;
+  --rosa: #f3b9d9;
+  --rosa-forte: #d982b8;
+  --lavanda: #d9c9f5;
+  --lilas: #a990d6;
+  --azul: #c9e6f5;
+  --pessego: #f8d8c5;
+  --fundo: #fbf5fc;
+  --texto: #57466b;
+  --texto-claro: #806e91;
+  --branco: #ffffff;
+  --borda: #ead8f1;
+  --sombra: 0 8px 25px rgba(137, 100, 163, .13);
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
 
 body {
-  margin: 0;
-  color: var(--branco);
-  font-family: Arial, sans-serif;
+  font-family: 'Nunito', sans-serif;
+  color: var(--texto);
   background:
-    radial-gradient(ellipse at 15% 10%, #512080, transparent 35%),
-    radial-gradient(ellipse at 85% 25%, #342078, transparent 35%),
-    linear-gradient(135deg, #120522, #211044, #16072e);
+    radial-gradient(circle at 10% 10%, #fce3f2 0, transparent 30%),
+    radial-gradient(circle at 90% 30%, #e7e0fa 0, transparent 30%),
+    var(--fundo);
+  line-height: 1.7;
 }
 
-a { color: inherit; text-decoration: none; }
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
 .container {
-  width: min(1150px, 92%);
+  width: min(1120px, 91%);
   margin: auto;
 }
+
+/* MENU */
 
 header {
   position: sticky;
   top: 0;
-  z-index: 10;
-  background: rgba(17,5,42,.94);
-  border-bottom: 1px solid var(--rosa);
-  box-shadow: 0 4px 22px #ff4acb33;
+  z-index: 100;
+  background: rgba(255, 250, 255, .94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--borda);
+  box-shadow: 0 3px 18px rgba(130, 90, 150, .08);
 }
 
 nav {
-  min-height: 75px;
+  min-height: 76px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   gap: 20px;
 }
 
 .logo {
-  font-size: 1.15rem;
-  font-weight: bold;
-  color: var(--rosa-claro);
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #9569ad;
 }
 
 .menu {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 9px;
   flex-wrap: wrap;
 }
 
 .menu a {
-  font-size: .9rem;
-  font-weight: bold;
-  padding: 9px;
-  border-radius: 20px;
+  font-size: .91rem;
+  font-weight: 700;
+  padding: 9px 13px;
+  border-radius: 25px;
+  transition: .25s;
 }
 
 .menu a:hover {
-  background: linear-gradient(90deg, var(--rosa), var(--roxo));
+  background: #f7e2f2;
+  color: #a45e99;
 }
 
+/* ABERTURA */
+
 .hero {
-  min-height: 540px;
+  min-height: 610px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.1fr .9fr;
   align-items: center;
-  gap: 35px;
-  padding: 55px 0;
+  gap: 50px;
+  padding: 65px 0;
 }
 
 .etiqueta {
   display: inline-block;
-  color: var(--rosa-claro);
-  border: 1px solid var(--rosa);
+  padding: 8px 17px;
   border-radius: 30px;
-  padding: 9px 15px;
-  font-size: .8rem;
-  font-weight: bold;
+  background: #f9e4f1;
+  color: #a45f95;
+  border: 1px solid #efc9e4;
+  font-size: .84rem;
+  font-weight: 800;
 }
 
-h1 {
-  font-size: clamp(2.8rem, 6vw, 5rem);
-  line-height: 1;
+.hero h1 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  line-height: 1.12;
   margin: 22px 0;
+  color: #76618f;
+  font-weight: 700;
 }
 
-.destaque {
-  background: linear-gradient(90deg, white, #ff8ee1, #b9a1ff);
+.hero h1 span {
+  background: linear-gradient(90deg, #dc91c3, #a98bdc, #83b9d7);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 
 .hero p {
-  color: var(--texto);
-  line-height: 1.8;
-  font-size: 1.05rem;
+  font-size: 1.04rem;
+  color: var(--texto-claro);
+  margin-bottom: 15px;
 }
 
 .hero-imagem {
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
-.hero-imagem img {
+.moldura-perfil {
+  width: min(370px, 100%);
+  padding: 12px;
+  border-radius: 48% 48% 35px 35px;
+  background: linear-gradient(145deg, #f5c6e3, #d8c8f6, #c4e4f4);
+  box-shadow: 0 15px 35px rgba(155, 111, 177, .2);
+  border: 3px solid white;
+}
+
+.moldura-perfil img {
   width: 100%;
-  max-height: 440px;
-  object-fit: contain;
-  filter: drop-shadow(0 0 25px #ff4acb66);
-  animation: flutuar 5s ease-in-out infinite;
-}
-
-@keyframes flutuar {
-  50% { transform: translateY(-12px); }
+  height: 410px;
+  object-fit: cover;
+  object-position: center 25%;
+  border-radius: 48% 48% 27px 27px;
+  border: 3px solid white;
 }
 
 .botoes {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 13px;
   margin-top: 25px;
 }
 
 .botao {
   display: inline-block;
-  padding: 13px 20px;
+  padding: 12px 23px;
   border-radius: 30px;
-  border: 1px solid var(--rosa-claro);
-  background: linear-gradient(100deg, #f72bb9, #9c39ed);
-  font-weight: bold;
-  transition: .2s;
+  background: linear-gradient(100deg, #e8a6d0, #b8a1e5);
+  color: white;
+  font-weight: 800;
+  box-shadow: 0 5px 15px #cba2dc55;
+  transition: .25s;
 }
 
 .botao:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 22px #ff4acb;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px #b58acb66;
 }
 
 .botao-secundario {
-  background: transparent;
+  background: white;
+  color: #9675b5;
+  border: 1px solid #d8c2e9;
 }
 
-section { padding: 65px 0; }
+/* SEÇÕES */
+
+section {
+  padding: 75px 0;
+}
 
 .titulo {
   text-align: center;
-  margin-bottom: 35px;
+  margin-bottom: 38px;
 }
 
 .titulo small {
-  color: var(--rosa-claro);
-  letter-spacing: 2px;
+  color: #bd80b2;
+  font-size: .83rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  font-weight: bold;
 }
 
 .titulo h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  margin: 12px 0;
+  font-family: 'Quicksand', sans-serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: #806a9b;
+  margin: 8px 0;
 }
 
 .titulo p {
-  color: var(--texto);
-  line-height: 1.7;
+  color: var(--texto-claro);
+  max-width: 650px;
+  margin: auto;
 }
+
+/* SOBRE */
+
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  align-items: center;
+  gap: 30px;
+}
+
+.painel {
+  background: rgba(255,255,255,.85);
+  border: 1px solid var(--borda);
+  border-radius: 25px;
+  padding: 30px;
+  box-shadow: var(--sombra);
+}
+
+.painel h3 {
+  font-family: 'Quicksand', sans-serif;
+  color: #9a70ae;
+  margin-bottom: 12px;
+  font-size: 1.35rem;
+}
+
+.painel p {
+  color: var(--texto-claro);
+  margin-bottom: 12px;
+}
+
+.imagem-sobre {
+  width: 100%;
+  max-height: 310px;
+  object-fit: contain;
+  background: white;
+  padding: 15px;
+  border: 3px solid #e8d7f3;
+  border-radius: 28px;
+  box-shadow: var(--sombra);
+}
+
+/* GATINHOS */
+
+.gatinhos-area {
+  background: linear-gradient(110deg, #f9e8f3, #eee8fb, #e4f2fa);
+  border-top: 1px solid #eee0f4;
+  border-bottom: 1px solid #eee0f4;
+}
+
+.gatinhos-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  align-items: center;
+  gap: 35px;
+}
+
+.gatinhos-img {
+  background: white;
+  padding: 13px;
+  border: 3px solid #e8c8ed;
+  border-radius: 30px;
+  box-shadow: var(--sombra);
+}
+
+.gatinhos-img img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+.gatinhos-texto h3 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.7rem;
+  color: #9675b5;
+  margin-bottom: 10px;
+}
+
+.gatinhos-texto p {
+  color: var(--texto-claro);
+}
+
+/* PROJETOS */
 
 .projetos {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 23px;
 }
 
 .cartao {
-  background: linear-gradient(145deg, #f8dafa, #c9a7ff);
-  color: #32104f;
-  border: 2px solid white;
-  border-radius: 22px;
-  padding: 20px;
+  background: white;
+  border: 2px solid #ead8f1;
+  border-radius: 25px;
+  padding: 18px;
   text-align: center;
+  box-shadow: var(--sombra);
   display: flex;
   flex-direction: column;
   transition: .25s;
 }
 
-.cartao:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 25px #ff4acb88;
+.cartao:nth-child(3n+1) {
+  border-color: #efcde3;
 }
 
-.cartao img {
+.cartao:nth-child(3n+2) {
+  border-color: #d9cdf1;
+}
+
+.cartao:nth-child(3n) {
+  border-color: #cce5f2;
+}
+
+.cartao:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 13px 28px #a88dbb33;
+}
+
+.cartao-imagem {
+  background: #fbf6fc;
+  border: 2px solid #eee0f2;
+  border-radius: 19px;
+  padding: 12px;
+  margin-bottom: 15px;
+}
+
+.cartao-imagem img {
   width: 100%;
-  height: 160px;
+  height: 175px;
   object-fit: contain;
-  margin-bottom: 12px;
+  border-radius: 13px;
 }
 
 .cartao h3 {
-  color: #74105f;
-  margin: 8px 0;
+  font-family: 'Quicksand', sans-serif;
+  color: #9670ac;
+  font-size: 1.22rem;
+  margin-bottom: 8px;
 }
 
 .cartao p {
-  font-size: .9rem;
-  line-height: 1.6;
+  color: var(--texto-claro);
+  font-size: .94rem;
   flex-grow: 1;
 }
 
 .cartao a {
   display: inline-block;
-  background: white;
-  color: #68106a;
-  padding: 10px 16px;
+  background: #f5e6f4;
+  color: #986caa;
+  border: 1px solid #ead2e9;
   border-radius: 25px;
-  font-weight: bold;
-  margin-top: 12px;
+  padding: 10px 18px;
+  font-weight: 800;
+  margin-top: 16px;
+  transition: .2s;
 }
 
-.cartao a:hover { background: #ffb5eb; }
-
-.sobre {
-  display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 25px;
-  align-items: center;
+.cartao a:hover {
+  background: #e9d9f5;
 }
 
-.painel {
-  padding: 28px;
-  border: 1px solid #ff9be866;
-  border-radius: 22px;
-  background: linear-gradient(145deg, #3b1765dd, #1b093ddd);
-  box-shadow: 0 10px 35px #0004;
-}
-
-.painel p {
-  color: var(--texto);
-  line-height: 1.8;
-}
-
-.sobre-imagem {
-  width: 100%;
-  max-height: 280px;
-  object-fit: contain;
-}
+/* HABILIDADES */
 
 .habilidades {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
+  gap: 20px;
 }
 
 .habilidade {
-  padding: 20px;
   text-align: center;
-  border-radius: 20px;
-  background: #ffffff12;
-  border: 1px solid #ff9be866;
-  transition: .2s;
+  background: white;
+  border: 2px solid #e8d8f1;
+  border-radius: 23px;
+  padding: 20px 14px;
+  box-shadow: var(--sombra);
+  transition: .25s;
 }
 
+.habilidade:nth-child(4n+1) { border-color: #f0cce2; }
+.habilidade:nth-child(4n+2) { border-color: #d8caf0; }
+.habilidade:nth-child(4n+3) { border-color: #c9e3f1; }
+.habilidade:nth-child(4n) { border-color: #f2d9c8; }
+
 .habilidade:hover {
-  background: #ff4acb22;
   transform: translateY(-5px);
 }
 
 .habilidade img {
-  width: 90px;
-  height: 90px;
+  width: 115px;
+  height: 105px;
   object-fit: contain;
+  margin: 0 auto 12px;
+  padding: 8px;
+  background: #fcf8fd;
+  border-radius: 17px;
 }
 
 .habilidade h3 {
-  color: var(--rosa-claro);
-  font-size: .95rem;
+  font-family: 'Quicksand', sans-serif;
+  color: #9472a9;
+  font-size: 1rem;
 }
+
+/* JORNADA */
 
 .jornada {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
+  gap: 20px;
 }
 
 .jornada-item {
   display: flex;
   align-items: center;
   gap: 18px;
+  background: white;
+  border: 2px solid #e9d9f1;
+  border-radius: 22px;
+  padding: 18px;
+  box-shadow: var(--sombra);
 }
 
 .jornada-item img {
-  width: 75px;
-  height: 75px;
+  width: 85px;
+  height: 85px;
   object-fit: contain;
+  background: #fbf6fc;
+  border: 2px solid #eee1f3;
+  border-radius: 17px;
+  padding: 7px;
+  flex-shrink: 0;
 }
 
-.contato {
-  text-align: center;
+.jornada-item h3 {
+  font-family: 'Quicksand', sans-serif;
+  color: #9270aa;
+  font-size: 1.05rem;
 }
+
+.jornada-item p {
+  color: var(--texto-claro);
+  font-size: .94rem;
+}
+
+/* CONTATO */
+
+.contato-painel {
+  text-align: center;
+  background: linear-gradient(130deg, #fae8f4, #eee8fa, #e4f2f8);
+  border: 2px solid white;
+  border-radius: 30px;
+  padding: 45px 25px;
+  box-shadow: var(--sombra);
+}
+
+.contato-painel h2 {
+  font-family: 'Quicksand', sans-serif;
+  color: #9271aa;
+  font-size: 2rem;
+  margin: 15px 0;
+}
+
+.contato-painel p {
+  color: var(--texto-claro);
+}
+
+.contato-painel .botoes {
+  justify-content: center;
+}
+
+/* RODAPÉ */
 
 footer {
-  padding: 28px;
   text-align: center;
-  color: #c9b4dc;
-  border-top: 1px solid #ffffff33;
+  padding: 28px 15px;
+  color: #947ca4;
+  border-top: 1px solid #eadcf0;
+  background: #fffaff;
+  font-size: .9rem;
 }
 
-@media (max-width: 760px) {
+/* RESPONSIVO */
+
+@media (max-width: 850px) {
   nav {
     flex-direction: column;
     padding: 16px 0;
   }
 
-  .menu {
-    justify-content: center;
-    gap: 8px;
-  }
-
-  .hero,
-  .sobre {
+  .hero {
     grid-template-columns: 1fr;
     text-align: center;
   }
 
-  .botoes { justify-content: center; }
+  .hero-imagem {
+    order: -1;
+  }
 
-  .projetos { grid-template-columns: 1fr; }
+  .moldura-perfil {
+    width: min(300px, 85%);
+  }
 
-  .habilidades { grid-template-columns: repeat(2, 1fr); }
+  .moldura-perfil img {
+    height: 330px;
+  }
 
-  .jornada { grid-template-columns: 1fr; }
+  .botoes {
+    justify-content: center;
+  }
+
+  .sobre-grid,
+  .gatinhos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projetos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .habilidades {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .menu {
+    justify-content: center;
+    gap: 3px;
+  }
+
+  .menu a {
+    font-size: .8rem;
+    padding: 7px 9px;
+  }
+
+  .hero {
+    padding: 40px 0;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  section {
+    padding: 55px 0;
+  }
+
+  .projetos,
+  .jornada {
+    grid-template-columns: 1fr;
+  }
+
+  .habilidades {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .painel {
+    padding: 22px;
+  }
 }
 </style>
 </head>
@@ -354,7 +612,8 @@ footer {
 
 <header>
   <nav class="container">
-    <a class="logo" href="#inicio">Valéria Galdino | Portfólio</a>
+    <a class="logo" href="#inicio">Valéria Galdino</a>
+
     <div class="menu">
       <a href="#inicio">Início</a>
       <a href="#sobre">Sobre mim</a>
@@ -368,113 +627,245 @@ footer {
 
 <main>
 
+<!-- INÍCIO -->
+
 <div class="container hero" id="inicio">
+
   <div>
     <span class="etiqueta">Cibersegurança • Tecnologia com propósito</span>
-    <h1>Olá, eu sou a<br><span class="destaque">Valéria Galdino</span></h1>
+
+    <h1>
+      Olá, eu sou a<br>
+      <span>Valéria Galdino</span>
+    </h1>
+
     <p>
       <strong>Estudante de Cibersegurança | Segurança da Informação</strong><br>
-      Transição para Tecnologia | PCD<br><br>
+      Transição para Tecnologia | PCD
+    </p>
+
+    <p>
       Tenho interesse em tecnologia, proteção de dados e aprendizado contínuo.
       Transformo meus estudos em projetos práticos, criativos e com impacto real.
     </p>
+
     <div class="botoes">
       <a class="botao" href="#projetos">Conheça meus projetos</a>
-      <a class="botao botao-secundario" href="https://github.com/vgaldino01-glitch" target="_blank">Meu GitHub</a>
+
+      <a class="botao botao-secundario"
+         href="https://github.com/vgaldino01-glitch"
+         target="_blank" rel="noopener noreferrer">
+        Meu GitHub
+      </a>
     </div>
   </div>
 
   <div class="hero-imagem">
-    <img src="assets/Gatinhos Kawaii na Segurança Digital.png" alt="Gatinhos Kawaii na Segurança Digital">
+    <div class="moldura-perfil">
+      <img
+        src="valeria%20profile.jpeg"
+        alt="Foto de perfil de Valéria Galdino"
+        onerror="this.onerror=null;this.alt='Foto de Valéria não encontrada';"
+      >
+    </div>
   </div>
+
 </div>
+
+<!-- SOBRE MIM -->
 
 <section id="sobre">
   <div class="container">
+
     <div class="titulo">
-      <small>Conheça minha trajetória</small>
+      <small>Um pouco sobre minha história</small>
       <h2>Sobre mim</h2>
+      <p>Conhecimento, curiosidade e vontade de crescer na tecnologia.</p>
     </div>
 
-    <div class="sobre">
+    <div class="sobre-grid">
+
       <div class="painel">
         <h3>Aprendizado que vira prática</h3>
+
         <p>
           Sou estudante de Cibersegurança e estou construindo minha trajetória
-          na tecnologia. Tenho explorado programação com Python, lógica,
+          na área de tecnologia.
+        </p>
+
+        <p>
+          Tenho explorado programação com Python, lógica de programação,
           Git e GitHub, além dos fundamentos de Segurança da Informação.
         </p>
+
         <p>
-          Meu objetivo é evoluir com consistência, desenvolver uma base técnica
-          sólida e contribuir com soluções responsáveis e acessíveis.
+          Meu objetivo é desenvolver uma base técnica sólida, aprender
+          continuamente e contribuir com soluções responsáveis e acessíveis.
         </p>
       </div>
-      <img class="sobre-imagem" src="assets/Livros Coloridos e Planta do Conhecimento.png" alt="Livros e planta do conhecimento">
+
+      <img
+        class="imagem-sobre"
+        src="assets/Livros Coloridos e Planta do Conhecimento.png"
+        alt="Ilustração de livros e planta do conhecimento"
+      >
+
     </div>
   </div>
 </section>
 
+<!-- GATINHOS -->
+
+<section class="gatinhos-area">
+  <div class="container gatinhos-grid">
+
+    <div class="gatinhos-img">
+      <img
+        src="assets/Gatinhos Kawaii na Segurança Digital.png"
+        alt="Ilustração de gatinhos kawaii na segurança digital"
+      >
+    </div>
+
+    <div class="gatinhos-texto">
+      <span class="etiqueta">Meu cantinho criativo</span>
+      <h3>Tecnologia com personalidade</h3>
+      <p>
+        Acredito que aprender tecnologia também pode ser uma experiência
+        criativa e leve. Este portfólio reúne meus estudos, projetos e
+        referências visuais que fazem parte da minha jornada.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJETOS -->
+
 <section id="projetos">
   <div class="container">
+
     <div class="titulo">
-      <small>Portfólio em construção contínua</small>
+      <small>O que venho construindo</small>
       <h2>Meus projetos</h2>
-      <p>Projetos acadêmicos e práticas de programação desenvolvidos durante minha jornada de aprendizagem.</p>
+      <p>
+        Projetos acadêmicos e práticas de programação desenvolvidos
+        durante minha jornada de aprendizagem.
+      </p>
     </div>
 
     <div class="projetos">
 
       <article class="cartao">
-        <img src="assets/Esporte para Todos em Neon.png" alt="Projeto Esporte para Todos">
+        <div class="cartao-imagem">
+          <img
+            src="assets/Esporte para Todos em Neon.png"
+            alt="Projeto Esporte para Todos"
+          >
+        </div>
+
         <h3>Esporte para Todos</h3>
-        <p>Projeto de extensão sobre mobilização digital, acesso à informação e inclusão social em Sorocaba.</p>
-        <a href="https://github.com/vgaldino01-glitch/esporte-para-todos" target="_blank">Ver projeto</a>
+
+        <p>
+          Projeto de extensão sobre mobilização digital, acesso à informação
+          e inclusão social em Sorocaba.
+        </p>
+
+        <a href="https://github.com/vgaldino01-glitch/esporte-para-todos"
+           target="_blank" rel="noopener noreferrer">
+          Ver projeto
+        </a>
       </article>
 
       <article class="cartao">
-        <img src="assets/Gerador de Senhas Neon.png" alt="Gerador de Senhas">
+        <div class="cartao-imagem">
+          <img
+            src="assets/Gerador de Senhas Neon.png"
+            alt="Gerador de senhas em Python"
+          >
+        </div>
+
         <h3>Gerador de Senhas</h3>
-        <p>Projeto em Python para praticar a criação de senhas e fundamentos de programação.</p>
-        <a href="https://github.com/vgaldino01-glitch/password-generator" target="_blank">Ver projeto</a>
+
+        <p>
+          Projeto em Python para praticar a criação de senhas
+          e os fundamentos da programação.
+        </p>
+
+        <a href="https://github.com/vgaldino01-glitch/password-generator"
+           target="_blank" rel="noopener noreferrer">
+          Ver projeto
+        </a>
       </article>
 
       <article class="cartao">
-        <img src="assets/Calculadora Neon em Python.png" alt="Calculadora em Python">
+        <div class="cartao-imagem">
+          <img
+            src="assets/Calculadora Neon em Python.png"
+            alt="Calculadora em Python"
+          >
+        </div>
+
         <h3>Calculadora em Python</h3>
-        <p>Aplicação simples para praticar operações matemáticas e lógica de programação.</p>
-        <a href="https://github.com/vgaldino01-glitch" target="_blank">Ver meu GitHub</a>
+
+        <p>
+          Aplicação simples para praticar operações matemáticas
+          e lógica de programação.
+        </p>
+
+        <a href="https://github.com/vgaldino01-glitch"
+           target="_blank" rel="noopener noreferrer">
+          Ver meu GitHub
+        </a>
       </article>
 
     </div>
   </div>
 </section>
 
+<!-- HABILIDADES -->
+
 <section id="habilidades">
   <div class="container">
+
     <div class="titulo">
       <small>Conhecimentos em desenvolvimento</small>
       <h2>Habilidades e interesses</h2>
+      <p>
+        Áreas que fazem parte dos meus estudos e da minha evolução profissional.
+      </p>
     </div>
 
     <div class="habilidades">
 
       <div class="habilidade">
-        <img src="assets/Botão brilhante com logo Python.png" alt="Python">
+        <img
+          src="assets/Botão brilhante com logo Python.png"
+          alt="Símbolo de Python"
+        >
         <h3>Python</h3>
       </div>
 
       <div class="habilidade">
-        <img src="assets/Emblema Brilhante de Lógica de Programação.png" alt="Lógica de programação">
+        <img
+          src="assets/Emblema Brilhante de Lógica de Programação.png"
+          alt="Emblema de lógica de programação"
+        >
         <h3>Lógica de programação</h3>
       </div>
 
       <div class="habilidade">
-        <img src="assets/Distintivo de Segurança da Informação.png" alt="Segurança da Informação">
+        <img
+          src="assets/Distintivo de Segurança da Informação.png"
+          alt="Distintivo de Segurança da Informação"
+        >
         <h3>Segurança da Informação</h3>
       </div>
 
       <div class="habilidade">
-        <img src="assets/Adesivo Octocat Git Rosa e Roxo.png" alt="Git e GitHub">
+        <img
+          src="assets/Adesivo Octocat Git Rosa e Roxo.png"
+          alt="Git e GitHub"
+        >
         <h3>Git e GitHub</h3>
       </div>
 
@@ -482,18 +873,26 @@ footer {
   </div>
 </section>
 
+<!-- JORNADA -->
+
 <section id="jornada">
   <div class="container">
+
     <div class="titulo">
       <small>Um passo de cada vez</small>
       <h2>Minha jornada</h2>
-      <p>Estudo, prática e evolução contínua em Cibersegurança.</p>
+      <p>
+        Estudo, prática e evolução contínua em Cibersegurança.
+      </p>
     </div>
 
-    <div class="painel jornada">
+    <div class="jornada">
 
       <div class="jornada-item">
-        <img src="assets/Livros Coloridos e Planta do Conhecimento.png" alt="">
+        <img
+          src="assets/Adesivo de Nuvens Coloridas e Brilhosos.png"
+          alt="Nuvens coloridas"
+        >
         <div>
           <h3>Graduação em andamento</h3>
           <p>Cibersegurança (2/4)</p>
@@ -501,7 +900,10 @@ footer {
       </div>
 
       <div class="jornada-item">
-        <img src="assets/Emblema Brilhante de Lógica de Programação.png" alt="">
+        <img
+          src="assets/Calculadora Neon em Python.png"
+          alt="Calculadora Python"
+        >
         <div>
           <h3>Projetos práticos</h3>
           <p>Aprendizado com Python e lógica.</p>
@@ -509,15 +911,21 @@ footer {
       </div>
 
       <div class="jornada-item">
-        <img src="assets/Escudo Neon de Segurança Retro.png" alt="">
+        <img
+          src="assets/Escudo Neon de Segurança Retro.png"
+          alt="Escudo de segurança"
+        >
         <div>
           <h3>Foco em segurança</h3>
-          <p>Segurança da Informação.</p>
+          <p>Estudos em Segurança da Informação.</p>
         </div>
       </div>
 
       <div class="jornada-item">
-        <img src="assets/Gráfico de crescimento com brilhos.png" alt="">
+        <img
+          src="assets/Gráfico de crescimento com brilhos.png"
+          alt="Gráfico de crescimento"
+        >
         <div>
           <h3>Desenvolvimento contínuo</h3>
           <p>Evolução na área de tecnologia.</p>
@@ -528,16 +936,36 @@ footer {
   </div>
 </section>
 
+<!-- CONTATO -->
+
 <section id="contato">
   <div class="container">
-    <div class="painel contato">
-      <span class="etiqueta">Vamos nos conectar</span>
-      <h2>Contato profissional</h2>
-      <p>Estou aberta a conexões, oportunidades de aprendizado e conversas sobre tecnologia.</p>
 
-      <div class="botoes" style="justify-content:center">
-        <a class="botao" href="https://www.linkedin.com/in/val%C3%A9ria-galdino-ferreira-666b1762/" target="_blank">Meu LinkedIn</a>
-        <a class="botao botao-secundario" href="https://github.com/vgaldino01-glitch" target="_blank">Meu GitHub</a>
+    <div class="contato-painel">
+
+      <span class="etiqueta">Vamos nos conectar</span>
+
+      <h2>Contato profissional</h2>
+
+      <p>
+        Estou aberta a conexões, oportunidades de aprendizado
+        e conversas sobre tecnologia.
+      </p>
+
+      <div class="botoes">
+
+        <a class="botao"
+           href="https://www.linkedin.com/in/val%C3%A9ria-galdino-ferreira-666b1762/"
+           target="_blank" rel="noopener noreferrer">
+          Meu LinkedIn
+        </a>
+
+        <a class="botao botao-secundario"
+           href="https://github.com/vgaldino01-glitch"
+           target="_blank" rel="noopener noreferrer">
+          Meu GitHub
+        </a>
+
       </div>
     </div>
   </div>
@@ -546,7 +974,7 @@ footer {
 </main>
 
 <footer>
-  Valéria Galdino · Portfólio de Cibersegurança · 2026
+  <p>Valéria Galdino · Portfólio de Cibersegurança · 2026</p>
 </footer>
 
 </body>
