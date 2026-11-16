@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -6,7 +7,7 @@
   <meta name="description" content="Portfólio de Valéria Galdino, estudante de Cibersegurança.">
   <title>Valéria Galdino | Portfólio</title>
   <style>
-    :root { --bg:#0b1220; --panel:#121e31; --text:#edf4ff; --muted:#b8c6d9; --accent:#55d6c2; --gold:#ffd45c; }
+    :root { --bg:#0b1220; --panel:#121e31; --text:#edf4ff; --muted:#b8c6d9; --accent:#55d6c2; }
     * { box-sizing:border-box; }
     body { margin:0; font-family:Arial,Helvetica,sans-serif; background:linear-gradient(140deg,#08111f,#102744); color:var(--text); line-height:1.65; }
     a { color:var(--accent); text-decoration:none; }
@@ -27,7 +28,10 @@
     .small { color:var(--muted); font-size:.94rem; }
     .pill { display:inline-block; border:1px solid #36556e; border-radius:30px; padding:4px 10px; margin:5px 5px 0 0; color:#d7e8f5; font-size:.85rem; }
     footer { padding:38px 0 55px; color:var(--muted); border-top:1px solid #29415c; margin-top:35px; }
-    @media(max-width:600px) { header {padding-top:54px;} .btn {width:100%; text-align:center;} }
+    @media(max-width:600px) {
+      header { padding-top:54px; }
+      .btn { width:100%; text-align:center; }
+    }
   </style>
 </head>
 <body>
@@ -53,20 +57,46 @@
     <section>
       <h2>Projetos</h2>
       <div class="grid">
+
         <article class="card">
           <div class="tag">Projeto acadêmico de extensão</div>
           <h3>Esporte para Todos: Informação e Inclusão Social em Sorocaba</h3>
           <p>Projeto de mobilização digital para organizar e divulgar informações públicas sobre atividades esportivas gratuitas no município de Sorocaba. Relaciona acesso à informação, inclusão social e cuidados com privacidade.</p>
-          <p><span class="pill">Mobilização digital</span><span class="pill">Acesso à informação</span><span class="pill">Privacidade</span><span class="pill">ODS 10</span></p>
+          <p>
+            <span class="pill">Mobilização digital</span>
+            <span class="pill">Acesso à informação</span>
+            <span class="pill">Privacidade</span>
+            <span class="pill">ODS 10</span>
+          </p>
           <a href="https://github.com/vgaldino01-glitch/esporte-para-todos" target="_blank" rel="noopener">Ver projeto no GitHub →</a>
         </article>
+
         <article class="card">
           <div class="tag">Python • Projeto de estudo</div>
           <h3>Gerador de senhas</h3>
-          <p>Projeto de programação em Python voltado à geração de senhas, como exercício de lógica e prática de desenvolvimento.</p>
-          <p><span class="pill">Python</span><span class="pill">Lógica de programação</span></p>
+          <p>Projeto em Python para praticar programação e conceitos relacionados à criação de senhas mais seguras, com opções de tamanho e uso de letras, números e símbolos.</p>
+          <p>
+            <span class="pill">Python</span>
+            <span class="pill">Lógica de programação</span>
+            <span class="pill">Senhas</span>
+          </p>
           <a href="https://github.com/vgaldino01-glitch/password-generator" target="_blank" rel="noopener">Ver repositório no GitHub →</a>
         </article>
+
+        <article class="card">
+          <div class="tag">Python • Projeto de estudo</div>
+          <h3>Calculadora em Python</h3>
+          <p>Aplicação simples que realiza operações matemáticas básicas a partir da entrada de dados do usuário. Desenvolvida para praticar lógica de programação e fundamentos da linguagem Python.</p>
+          <p>
+            <span class="pill">Python</span>
+            <span class="pill">Soma</span>
+            <span class="pill">Subtração</span>
+            <span class="pill">Multiplicação</span>
+            <span class="pill">Divisão</span>
+          </p>
+          <a href="https://github.com/vgaldino01-glitch/projeto-python" target="_blank" rel="noopener">Ver repositório no GitHub →</a>
+        </article>
+
       </div>
     </section>
 
@@ -91,6 +121,9 @@
       </div>
     </section>
   </main>
-  <footer><div class="wrap">© 2026 Valéria Galdino • Portfólio em desenvolvimento</div></footer>
+
+  <footer>
+    <div class="wrap">© 2026 Valéria Galdino • Portfólio em desenvolvimento</div>
+  </footer>
 </body>
 </html>
