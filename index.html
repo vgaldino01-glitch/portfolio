@@ -1,25 +1,708 @@
 
----
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#160b2d">
 
-## 🌎 English Proficiency
+<title>Valéria Galdino | Portfólio Cybersecurity</title>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/EF%20SET-A2%20Elementary-orange?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Score-38%2F100-blue?style=for-the-badge" />
-</p>
+<meta name="description" content="Portfólio de Valéria Galdino, estudante de Cibersegurança. Projetos, tecnologias, estudos e desenvolvimento profissional.">
 
-**EF SET English Certificate**
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
-| Skill | Level | Score |
-|---|---|---:|
-| 📖 Reading | B2 – Upper Intermediate | 57/100 |
-| 🎧 Listening | A0 – Novice | 18/100 |
-| 🌎 Overall | A2 – Elementary | 38/100 |
+:root {
+  --bg: #100820;
+  --bg2: #1b1031;
+  --purple: #a855f7;
+  --pink: #f472d0;
+  --cyan: #67e8f9;
+  --white: #f8f4ff;
+  --muted: #c4b5d8;
+  --card: rgba(255,255,255,.055);
+}
 
-📅 **Certification date:** November 23, 2026
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
-🔗 [View my EF SET Certificate](https://cert.efset.org/KPmmQU)
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
 
-I am continuously developing my English skills, focusing on listening comprehension, communication, and professional vocabulary, particularly in technology and cybersecurity.
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
----
+.stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, #fff 50%, transparent),
+    radial-gradient(2px 2px at 70% 60%, #d8a5ff 50%, transparent),
+    radial-gradient(2px 2px at 40% 80%, #fff 50%, transparent),
+    radial-gradient(2px 2px at 90% 20%, #f9a8d4 50%, transparent);
+  background-size: 250px 250px;
+  animation: twinkle 5s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: .35; }
+  to { opacity: 1; }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(16,8,32,.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(168,85,247,.25);
+}
+
+nav {
+  max-width: 1150px;
+  margin: auto;
+  padding: 18px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--pink);
+  text-shadow: 0 0 15px var(--purple);
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 13px;
+  color: var(--muted);
+  transition: .3s;
+}
+
+.nav-links a:hover {
+  color: var(--cyan);
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  color: white;
+  border: 0;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+section {
+  padding: 105px 25px 65px;
+  max-width: 1150px;
+  margin: auto;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 280px;
+}
+
+.hero h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(30px, 5vw, 55px);
+  line-height: 1.3;
+  margin: 15px 0;
+}
+
+.gradient {
+  background: linear-gradient(90deg, var(--pink), var(--purple), var(--cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  color: var(--muted);
+  line-height: 1.9;
+  max-width: 600px;
+}
+
+.tag {
+  color: var(--cyan);
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero-image {
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  border: 3px solid var(--purple);
+  box-shadow: 0 0 30px var(--purple);
+  object-fit: cover;
+  background: var(--bg2);
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.btn {
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-block;
+  transition: .3s;
+  border: 1px solid var(--purple);
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--purple), #7c3aed);
+  color: white;
+}
+
+.btn-outline {
+  color: var(--cyan);
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px var(--purple);
+}
+
+.section-title {
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(23px, 4vw, 32px);
+  margin-bottom: 40px;
+}
+
+.section-title span {
+  color: var(--pink);
+}
+
+.about-box {
+  background: var(--card);
+  border: 1px solid rgba(168,85,247,.35);
+  border-radius: 20px;
+  padding: 35px;
+  line-height: 1.9;
+  color: var(--muted);
+  box-shadow: 0 0 25px rgba(168,85,247,.08);
+}
+
+.about-box strong {
+  color: var(--cyan);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid rgba(168,85,247,.3);
+  padding: 25px;
+  border-radius: 18px;
+  transition: .3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+  border-color: var(--pink);
+  box-shadow: 0 0 25px rgba(168,85,247,.2);
+}
+
+.card h3 {
+  color: var(--pink);
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.card img {
+  width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.project-link {
+  display: inline-block;
+  color: var(--cyan);
+  margin-top: 18px;
+  font-size: 13px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 13px;
+}
+
+.skill {
+  background: rgba(168,85,247,.12);
+  border: 1px solid var(--purple);
+  color: var(--white);
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 13px;
+  transition: .3s;
+}
+
+.skill:hover {
+  background: var(--purple);
+  transform: scale(1.05);
+}
+
+.timeline {
+  border-left: 2px solid var(--purple);
+  padding-left: 28px;
+  margin-left: 12px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--pink);
+  left: -36px;
+  top: 5px;
+  box-shadow: 0 0 12px var(--pink);
+}
+
+.timeline-item h3 {
+  color: var(--cyan);
+  font-size: 16px;
+}
+
+.timeline-item p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+  margin-top: 7px;
+}
+
+.certificate {
+  border: 1px solid var(--pink);
+  background: linear-gradient(145deg, rgba(168,85,247,.13), rgba(244,114,208,.06));
+}
+
+.certificate-score {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 38px;
+  color: var(--cyan);
+  margin: 12px 0;
+}
+
+.level {
+  display: inline-block;
+  padding: 6px 13px;
+  border-radius: 20px;
+  background: rgba(168,85,247,.2);
+  color: var(--pink);
+  font-size: 12px;
+  margin: 5px 4px 5px 0;
+}
+
+.certificate p {
+  margin-top: 10px;
+}
+
+.contact-box {
+  text-align: center;
+  background: var(--card);
+  border: 1px solid rgba(168,85,247,.35);
+  padding: 40px 25px;
+  border-radius: 20px;
+}
+
+.contact-box p {
+  color: var(--muted);
+  margin: 15px auto 25px;
+  line-height: 1.8;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 15px;
+  border-top: 1px solid rgba(168,85,247,.2);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+footer span {
+  color: var(--pink);
+}
+
+@media(max-width: 760px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    padding: 25px;
+    background: #160b2d;
+    flex-direction: column;
+    text-align: center;
+    border-bottom: 1px solid var(--purple);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hero {
+    text-align: center;
+    padding-top: 140px;
+    gap: 35px;
+  }
+
+  .hero-content {
+    order: 2;
+  }
+
+  .hero-image {
+    order: 1;
+    width: 190px;
+    height: 190px;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .about-box {
+    padding: 23px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<header>
+<nav>
+  <a href="#inicio" class="logo">VG<span class="gradient">.CYBER</span></a>
+
+  <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#projetos">Projetos</a></li>
+    <li><a href="#habilidades">Habilidades</a></li>
+    <li><a href="#jornada">Jornada</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+</header>
+
+<main>
+
+<!-- INÍCIO -->
+<section class="hero" id="inicio">
+
+  <div class="hero-content">
+    <span class="tag">Hello, World! ✨</span>
+
+    <h1>Olá, eu sou <span class="gradient">Valéria Galdino</span></h1>
+
+    <h2 style="color:var(--cyan);font-size:19px;margin-bottom:18px">
+      Estudante de Cibersegurança
+    </h2>
+
+    <p>
+      Explorando o universo da tecnologia, segurança da informação
+      e desenvolvimento. Construindo conhecimento, desenvolvendo
+      projetos e transformando desafios em oportunidades.
+    </p>
+
+    <div class="buttons">
+      <a href="#projetos" class="btn btn-primary">Conheça meus projetos</a>
+      <a href="https://github.com/vgaldino01-glitch"
+         target="_blank" rel="noopener" class="btn btn-outline">
+        Meu GitHub
+      </a>
+    </div>
+  </div>
+
+  <img src="assets/nuvens.png"
+       alt="Ilustração do portfólio"
+       class="hero-image">
+</section>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <h2 class="section-title">Sobre <span>mim</span></h2>
+
+  <div class="about-box">
+    <p>
+      Olá! Sou <strong>Valéria Galdino</strong>, estudante de
+      <strong>Cibersegurança</strong>, apaixonada por tecnologia,
+      aprendizado contínuo e pelo universo da segurança digital.
+    </p>
+
+    <br>
+
+    <p>
+      Estou desenvolvendo minhas habilidades em programação,
+      lógica computacional, segurança da informação e ferramentas
+      tecnológicas.
+    </p>
+
+    <br>
+
+    <p>
+      Este espaço reúne minha jornada acadêmica, meus projetos
+      práticos e minha evolução profissional na área de tecnologia.
+    </p>
+  </div>
+</section>
+
+<!-- PROJETOS -->
+<section id="projetos">
+  <h2 class="section-title">Meus <span>Projetos</span></h2>
+
+  <div class="grid">
+
+    <article class="card">
+      <img src="assets/gerador-senhas.png" alt="Gerador de senhas">
+      <h3>🔐 Gerador de Senhas</h3>
+      <p>
+        Projeto desenvolvido para gerar senhas, explorando
+        conceitos de lógica de programação e segurança digital.
+      </p>
+      <a class="project-link"
+         href="https://github.com/vgaldino01-glitch/password-generator"
+         target="_blank" rel="noopener">
+        Ver projeto no GitHub →
+      </a>
+    </article>
+
+    <article class="card">
+      <img src="assets/calculadora.png" alt="Calculadora Python">
+      <h3>🐍 Calculadora em Python</h3>
+      <p>
+        Projeto de programação com operações matemáticas,
+        estruturas lógicas e fundamentos da linguagem Python.
+      </p>
+      <a class="project-link"
+         href="https://github.com/vgaldino01-glitch/projeto-python"
+         target="_blank" rel="noopener">
+        Ver projeto no GitHub →
+      </a>
+    </article>
+
+    <article class="card">
+      <img src="assets/esporte-para-todos.png" alt="Esporte para Todos">
+      <h3>⚽ Esporte para Todos</h3>
+      <p>
+        Projeto voltado à inclusão e ao acesso ao esporte,
+        utilizando a tecnologia como ferramenta de apoio.
+      </p>
+      <a class="project-link"
+         href="https://github.com/vgaldino01-glitch/esporte-para-todos"
+         target="_blank" rel="noopener">
+        Ver projeto no GitHub →
+      </a>
+    </article>
+
+  </div>
+</section>
+
+<!-- HABILIDADES -->
+<section id="habilidades">
+  <h2 class="section-title">Minhas <span>Habilidades</span></h2>
+
+  <div class="skills">
+    <span class="skill">Python</span>
+    <span class="skill">Lógica de Programação</span>
+    <span class="skill">HTML5</span>
+    <span class="skill">CSS3</span>
+    <span class="skill">Git</span>
+    <span class="skill">GitHub</span>
+    <span class="skill">Segurança da Informação</span>
+    <span class="skill">Cibersegurança</span>
+  </div>
+</section>
+
+<!-- JORNADA -->
+<section id="jornada">
+  <h2 class="section-title">Minha <span>Jornada</span></h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <h3>🎓 Formação em Cibersegurança</h3>
+      <p>
+        Graduanda em Cibersegurança, desenvolvendo conhecimentos
+        em tecnologia, segurança digital e programação.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>💻 Desenvolvimento de projetos</h3>
+      <p>
+        Prática com Python, lógica de programação e desenvolvimento
+        de projetos publicados no GitHub.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>🌎 Inglês – EF SET</h3>
+      <p>
+        Certificação de proficiência em inglês realizada em
+        23 de novembro de 2026.
+      </p>
+
+      <div class="card certificate" style="margin-top:15px">
+
+        <h3>EF SET English Certificate</h3>
+
+        <div class="certificate-score">38/100</div>
+
+        <span class="level">A2 – Elementary (Overall)</span>
+
+        <p>📖 Reading: <strong>B2 – Upper Intermediate</strong> (57/100)</p>
+        <p>🎧 Listening: <strong>A0 – Novice</strong> (18/100)</p>
+
+        <p style="margin-top:15px">
+          Desenvolvimento contínuo das habilidades de comunicação
+          e compreensão da língua inglesa.
+        </p>
+
+        <a href="https://cert.efset.org/KPmmQU"
+           target="_blank" rel="noopener"
+           class="btn btn-primary"
+           style="margin-top:18px">
+          Ver certificado oficial →
+        </a>
+
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <h3>🚀 Evolução profissional</h3>
+      <p>
+        Em constante aprendizado, buscando novos conhecimentos,
+        desafios e oportunidades na área de tecnologia e segurança.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+  <h2 class="section-title">Vamos nos <span>conectar?</span></h2>
+
+  <div class="contact-box">
+    <h3 style="color:var(--pink)">
+      Obrigada por visitar meu portfólio! 💜
+    </h3>
+
+    <p>
+      Estou aberta a conexões, troca de conhecimentos e
+      oportunidades de aprendizado na área de tecnologia
+      e cibersegurança.
+    </p>
+
+    <div class="buttons" style="justify-content:center">
+
+      <a href="https://github.com/vgaldino01-glitch"
+         target="_blank" rel="noopener"
+         class="btn btn-primary">
+        GitHub
+      </a>
+
+      <a href="https://www.linkedin.com/in/valéria-galdino-ferreira-666b1762/"
+         target="_blank" rel="noopener"
+         class="btn btn-outline">
+        LinkedIn
+      </a>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Desenvolvido com <span>♥</span> por Valéria Galdino</p>
+  <p>© 2026 | Portfólio de Cibersegurança</p>
+</footer>
+
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+menuBtn.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+  });
+});
+</script>
+
+</body>
+</html>
