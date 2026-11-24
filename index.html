@@ -5,8 +5,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#10091f">
+
 <title>Valéria Galdino | VG.CYBER</title>
-<meta name="description" content="Portfólio de Valéria Galdino — estudante de Cibersegurança.">
+<meta name="description" content="Portfólio de Valéria Galdino, estudante de Cibersegurança.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,16 +27,33 @@
   --content:1120px;
 }
 
-* {box-sizing:border-box;margin:0;padding:0}
-html {scroll-behavior:smooth;scroll-padding-top:92px}
+* {
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top:90px;
+}
+
 body {
   background:var(--bg);
   color:var(--white);
   font-family:Poppins,sans-serif;
   overflow-x:hidden;
 }
-a {color:inherit;text-decoration:none}
-img {max-width:100%;display:block}
+
+a {
+  color:inherit;
+  text-decoration:none;
+}
+
+img {
+  max-width:100%;
+  display:block;
+}
 
 .site-bg {
   position:fixed;
@@ -43,10 +61,10 @@ img {max-width:100%;display:block}
   z-index:-2;
   pointer-events:none;
   background:
-  radial-gradient(ellipse at 8% 16%,rgba(126,34,206,.20),transparent 35%),
-  radial-gradient(ellipse at 92% 45%,rgba(219,39,119,.10),transparent 32%),
-  radial-gradient(ellipse at 48% 100%,rgba(14,165,233,.07),transparent 42%),
-  var(--bg);
+    radial-gradient(ellipse at 8% 16%,rgba(126,34,206,.20),transparent 35%),
+    radial-gradient(ellipse at 92% 45%,rgba(219,39,119,.10),transparent 32%),
+    radial-gradient(ellipse at 48% 100%,rgba(14,165,233,.07),transparent 42%),
+    var(--bg);
 }
 
 .site-stars {
@@ -56,10 +74,10 @@ img {max-width:100%;display:block}
   pointer-events:none;
   opacity:.42;
   background-image:
-  radial-gradient(1px 1px at 20% 30%,#fff 99%,transparent),
-  radial-gradient(2px 2px at 70% 60%,#d8b4fe 99%,transparent),
-  radial-gradient(1px 1px at 40% 80%,#fff 99%,transparent),
-  radial-gradient(2px 2px at 90% 20%,#f9a8d4 99%,transparent);
+    radial-gradient(1px 1px at 20% 30%,#fff 99%,transparent),
+    radial-gradient(2px 2px at 70% 60%,#d8b4fe 99%,transparent),
+    radial-gradient(1px 1px at 40% 80%,#fff 99%,transparent),
+    radial-gradient(2px 2px at 90% 20%,#f9a8d4 99%,transparent);
   background-size:250px 250px;
 }
 
@@ -73,7 +91,7 @@ header {
   position:fixed;
   inset:0 0 auto;
   z-index:50;
-  background:rgba(16,9,31,.88);
+  background:rgba(16,9,31,.90);
   backdrop-filter:blur(18px);
   border-bottom:1px solid var(--line);
 }
@@ -106,7 +124,9 @@ header {
   transition:.2s;
 }
 
-.nav-links a:hover {color:var(--cyan)}
+.nav-links a:hover {
+  color:var(--cyan);
+}
 
 .menu-btn {
   display:none;
@@ -122,7 +142,9 @@ header {
   position:relative;
 }
 
-.section-head {margin-bottom:36px}
+.section-head {
+  margin-bottom:36px;
+}
 
 .eyebrow {
   font-size:11px;
@@ -141,7 +163,9 @@ header {
   margin:0 9px 3px 0;
 }
 
-h1,h2,h3 {font-family:Orbitron,sans-serif}
+h1,h2,h3 {
+  font-family:Orbitron,sans-serif;
+}
 
 .section-title {
   font-size:clamp(27px,4vw,38px);
@@ -246,6 +270,8 @@ h1,h2,h3 {font-family:Orbitron,sans-serif}
   font-size:10px;
 }
 
+/* FOTO DE PERFIL */
+
 .hero-visual {
   min-height:475px;
   display:grid;
@@ -268,8 +294,6 @@ h1,h2,h3 {font-family:Orbitron,sans-serif}
   border:1px solid rgba(103,232,249,.14);
   border-radius:50%;
 }
-
-/* FOTO DE PERFIL */
 
 .portrait-frame {
   width:330px;
@@ -349,8 +373,16 @@ h1,h2,h3 {font-family:Orbitron,sans-serif}
   text-shadow:0 0 14px currentColor;
 }
 
-.spark.one {top:45px;left:35px}
-.spark.two {bottom:65px;right:4px;color:var(--cyan)}
+.spark.one {
+  top:45px;
+  left:35px;
+}
+
+.spark.two {
+  bottom:65px;
+  right:4px;
+  color:var(--cyan);
+}
 
 @keyframes spin {
   to {transform:rotate(360deg)}
@@ -366,12 +398,12 @@ h1,h2,h3 {font-family:Orbitron,sans-serif}
   100% {transform:scale(1.07)}
 }
 
-/* ILUSTRAÇÕES E GATINHOS */
+/* ILUSTRAÇÕES */
 
 .cutout {
   background:transparent!important;
   object-fit:contain;
-  opacity:.88;
+  opacity:.92;
   filter:drop-shadow(0 12px 18px rgba(168,85,247,.18));
   transition:opacity .4s ease,filter .4s ease;
 }
@@ -424,7 +456,9 @@ h1,h2,h3 {font-family:Orbitron,sans-serif}
   margin-bottom:16px;
 }
 
-.about-copy strong {color:var(--cyan)}
+.about-copy strong {
+  color:var(--cyan);
+}
 
 .about-note {
   border-left:2px solid var(--pink);
@@ -487,7 +521,9 @@ h1,h2,h3 {font-family:Orbitron,sans-serif}
   padding:14px;
 }
 
-.project-body {padding:10px 21px 23px}
+.project-body {
+  padding:10px 21px 23px;
+}
 
 .project-no {
   font:10px Orbitron;
@@ -580,7 +616,9 @@ h1,h2,h3 {font-family:Orbitron,sans-serif}
   margin-bottom:12px;
 }
 
-.skill-feature.security .skill-copy h3 {color:var(--cyan)}
+.skill-feature.security .skill-copy h3 {
+  color:var(--cyan);
+}
 
 .skill-copy p {
   font-size:12px;
@@ -604,7 +642,7 @@ h1,h2,h3 {font-family:Orbitron,sans-serif}
   background:rgba(168,85,247,.07);
 }
 
-/* FERRAMENTAS E ÍCONES AMPLIADOS */
+/* FERRAMENTAS */
 
 .knowledge {
   margin-top:34px;
@@ -654,6 +692,90 @@ h1,h2,h3 {font-family:Orbitron,sans-serif}
   color:var(--muted);
 }
 
+/* INGLÊS */
+
+.language-card {
+  margin-top:32px;
+  padding:25px;
+  display:flex;
+  align-items:center;
+  gap:25px;
+  max-width:700px;
+  border:1px solid rgba(168,85,247,.35);
+  border-radius:20px;
+  background:linear-gradient(
+    120deg,
+    rgba(168,85,247,.13),
+    rgba(244,114,208,.05)
+  );
+  transition:.3s;
+}
+
+.language-card:hover {
+  transform:translateY(-4px);
+  border-color:var(--pink);
+}
+
+.language-icon {
+  width:95px;
+  height:95px;
+  flex-shrink:0;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  font:800 28px Orbitron;
+  color:var(--white);
+  background:linear-gradient(135deg,var(--purple),var(--pink));
+  box-shadow:0 0 25px rgba(168,85,247,.3);
+}
+
+.language-info {
+  flex:1;
+  min-width:0;
+}
+
+.language-label {
+  color:var(--cyan);
+  font-size:10px;
+  letter-spacing:2px;
+}
+
+.language-info h3 {
+  color:var(--pink);
+  font-size:20px;
+  margin:6px 0;
+}
+
+.language-info > p {
+  color:var(--muted);
+  font-size:11px;
+}
+
+.language-level {
+  display:flex;
+  align-items:center;
+  gap:13px;
+  margin-top:15px;
+}
+
+.language-level strong {
+  font:700 24px Orbitron;
+  color:var(--cyan);
+  min-width:43px;
+}
+
+.language-level span {
+  font-size:12px;
+  color:var(--white);
+}
+
+.language-description {
+  font-size:10px;
+  color:var(--muted);
+  margin-top:14px;
+  line-height:1.8;
+}
+
 /* RODAPÉ */
 
 footer {
@@ -691,30 +813,62 @@ footer {
   color:var(--muted);
 }
 
-.footer-links a:hover {color:var(--cyan)}
+.footer-links a:hover {
+  color:var(--cyan);
+}
 
 /* RESPONSIVIDADE */
 
 @media(max-width:850px) {
-  .hero {grid-template-columns:1fr .85fr}
-  .portrait-frame {width:280px;height:280px}
-  .portrait-orbit {width:350px;height:350px}
-  .projects {grid-template-columns:repeat(2,1fr)}
-  .knowledge-items {grid-template-columns:repeat(2,1fr)}
-  .skills-wrap {gap:18px}
+  .hero {
+    grid-template-columns:1fr .85fr;
+  }
+
+  .portrait-frame {
+    width:280px;
+    height:280px;
+  }
+
+  .portrait-orbit {
+    width:350px;
+    height:350px;
+  }
+
+  .projects {
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .knowledge-items {
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .skills-wrap {
+    gap:18px;
+  }
+
   .skill-feature {
     grid-template-columns:1fr;
     justify-items:center;
     text-align:center;
   }
-  .skill-art {height:230px}
-  .skill-list {justify-content:center}
+
+  .skill-art {
+    height:230px;
+  }
+
+  .skill-list {
+    justify-content:center;
+  }
 }
 
 @media(max-width:620px) {
-  .container {width:calc(100% - 36px)}
+  .container {
+    width:calc(100% - 36px);
+  }
 
-  .menu-btn {display:block}
+  .menu-btn {
+    display:block;
+  }
 
   .nav-links {
     display:none;
@@ -729,7 +883,9 @@ footer {
     gap:18px;
   }
 
-  .nav-links.active {display:flex}
+  .nav-links.active {
+    display:flex;
+  }
 
   .hero {
     min-height:auto;
@@ -746,25 +902,52 @@ footer {
     min-height:370px;
   }
 
-  .portrait-frame {width:250px;height:250px}
-  .portrait-orbit {width:310px;height:310px}
+  .portrait-frame {
+    width:250px;
+    height:250px;
+  }
 
-  .hero-copy p {margin:auto}
-  .actions,.hero-tags {justify-content:center}
-  .hero h1 {font-size:37px}
+  .portrait-orbit {
+    width:310px;
+    height:310px;
+  }
 
-  .section {padding:70px 0}
+  .hero-copy p {
+    margin:auto;
+  }
+
+  .actions,.hero-tags {
+    justify-content:center;
+  }
+
+  .hero h1 {
+    font-size:37px;
+  }
+
+  .section {
+    padding:70px 0;
+  }
 
   .about-grid {
     grid-template-columns:1fr;
     gap:12px;
   }
 
-  .about-art {min-height:260px}
-  .about-art img {max-height:260px}
+  .about-art {
+    min-height:260px;
+  }
 
-  .projects {grid-template-columns:1fr}
-  .project-visual {height:245px}
+  .about-art img {
+    max-height:260px;
+  }
+
+  .projects {
+    grid-template-columns:1fr;
+  }
+
+  .project-visual {
+    height:245px;
+  }
 
   .skills-wrap {
     grid-template-columns:1fr;
@@ -778,10 +961,17 @@ footer {
     padding:10px 0;
   }
 
-  .skill-art {height:235px}
-  .skill-list {justify-content:flex-start}
+  .skill-art {
+    height:235px;
+  }
 
-  .knowledge-items {grid-template-columns:1fr 1fr}
+  .skill-list {
+    justify-content:flex-start;
+  }
+
+  .knowledge-items {
+    grid-template-columns:1fr 1fr;
+  }
 
   .knowledge-item {
     flex-direction:column;
@@ -795,6 +985,25 @@ footer {
     width:75px;
     height:75px;
     flex-basis:75px;
+  }
+
+  .language-card {
+    gap:14px;
+    padding:17px;
+  }
+
+  .language-icon {
+    width:65px;
+    height:65px;
+    font-size:20px;
+  }
+
+  .language-level {
+    gap:9px;
+  }
+
+  .language-level span {
+    font-size:11px;
   }
 
   .footer-inner {
@@ -824,17 +1033,23 @@ footer {
 <div class="site-stars"></div>
 
 <header>
- <nav class="nav container">
-  <a class="logo" href="#inicio">VG.CYBER</a>
-  <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">☰</button>
+  <nav class="nav container">
+    <a class="logo" href="#inicio">VG.CYBER</a>
 
-  <ul class="nav-links" id="navLinks">
-   <li><a href="#inicio">Início</a></li>
-   <li><a href="#sobre">Sobre</a></li>
-   <li><a href="#projetos">Projetos</a></li>
-   <li><a href="#habilidades">Habilidades</a></li>
-  </ul>
- </nav>
+    <button
+      class="menu-btn"
+      id="menuBtn"
+      aria-label="Abrir menu"
+      aria-expanded="false"
+    >☰</button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+    </ul>
+  </nav>
 </header>
 
 <main>
@@ -843,324 +1058,469 @@ footer {
 
 <section class="hero container" id="inicio">
 
- <div class="hero-copy">
-  <div class="eyebrow">Olá, mundo! Bem-vindo ao meu universo</div>
+  <div class="hero-copy">
 
-  <h1>
-   Olá, eu sou<br>
-   <span class="gradient">Valéria Galdino</span>
-  </h1>
-
-  <h2>Estudante de Cibersegurança</h2>
-
-  <p>
-   Explorando o universo da tecnologia, segurança da informação e desenvolvimento.
-   Construindo conhecimento, desenvolvendo projetos e transformando desafios em oportunidades.
-  </p>
-
-  <div class="actions">
-   <a class="btn primary" href="#projetos">Conheça meus projetos</a>
-   <a class="btn secondary" href="https://github.com/vgaldino01-glitch" target="_blank" rel="noopener">Meu GitHub</a>
-  </div>
-
-  <div class="hero-tags">
-   <span>Cybersecurity</span>
-   <span>Programming</span>
-   <span>Technology</span>
-  </div>
- </div>
-
- <div class="hero-visual">
-  <div class="portrait-orbit"></div>
-  <span class="spark one">✦</span>
-  <span class="spark two">✧</span>
-
-  <div class="portrait-frame">
-   <div class="portrait-inner">
-
-    <!-- FOTO: coloque sua fotografia em assets/foto-perfil.jpg -->
-
-    <img
-     src="./assets/foto-perfil.jpg"
-     alt="Fotografia de Valéria Galdino"
-     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
-    >
-
-    <div class="portrait-fallback">
-     VG
-     <small>Adicione sua foto em assets/foto-perfil.jpg</small>
+    <div class="eyebrow">
+      Olá, mundo! Bem-vindo ao meu universo
     </div>
 
-   </div>
+    <h1>
+      Olá, eu sou<br>
+      <span class="gradient">Valéria Galdino</span>
+    </h1>
+
+    <h2>Estudante de Cibersegurança</h2>
+
+    <p>
+      Explorando o universo da tecnologia, segurança da informação
+      e desenvolvimento. Construindo conhecimento, desenvolvendo
+      projetos e transformando desafios em oportunidades.
+    </p>
+
+    <div class="actions">
+      <a class="btn primary" href="#projetos">
+        Conheça meus projetos
+      </a>
+
+      <a
+        class="btn secondary"
+        href="https://github.com/vgaldino01-glitch"
+        target="_blank"
+        rel="noopener"
+      >
+        Meu GitHub
+      </a>
+    </div>
+
+    <div class="hero-tags">
+      <span>Cybersecurity</span>
+      <span>Programming</span>
+      <span>Technology</span>
+    </div>
+
   </div>
- </div>
+
+  <div class="hero-visual">
+
+    <div class="portrait-orbit"></div>
+
+    <span class="spark one">✦</span>
+    <span class="spark two">✧</span>
+
+    <div class="portrait-frame">
+
+      <div class="portrait-inner">
+
+        <!-- FOTO ORIGINAL NA RAIZ DO REPOSITÓRIO -->
+
+        <img
+          src="./valeria%20profile.jpeg"
+          alt="Fotografia de Valéria Galdino"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+        >
+
+        <div class="portrait-fallback">
+          VG
+          <small>Fotografia não encontrada</small>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
 </section>
 
 <!-- SOBRE MIM -->
 
 <section class="section" id="sobre">
- <div class="container">
+  <div class="container">
 
-  <div class="section-head">
-   <div class="eyebrow">Minha história</div>
-   <h2 class="section-title">Sobre <span class="gradient">mim</span></h2>
-  </div>
+    <div class="section-head">
+      <div class="eyebrow">Minha história</div>
 
-  <div class="about-grid">
-
-   <div class="about-copy">
-    <p>
-     Olá! Sou <strong>Valéria Galdino</strong>, estudante de
-     <strong>Cibersegurança</strong>, interessada em tecnologia,
-     programação e segurança da informação.
-    </p>
-
-    <p>
-     Estou construindo minha trajetória por meio dos estudos,
-     da prática e do desenvolvimento de projetos.
-     Tenho interesse em compreender como os sistemas funcionam
-     e como podemos protegê-los.
-    </p>
-
-    <div class="about-note">
-     Curiosidade, criatividade e aprendizado contínuo
-     fazem parte da minha jornada na tecnologia.
+      <h2 class="section-title">
+        Sobre <span class="gradient">mim</span>
+      </h2>
     </div>
-   </div>
 
-   <div class="about-art">
-    <div class="art-glow"></div>
+    <div class="about-grid">
 
-    <img
-     class="cutout"
-     data-remove-white
-     src="./assets/902528ED-AB60-4CED-9112-F84AAC08C8DF.png"
-     alt="Gatinho unicórnio ilustrado"
-     loading="lazy"
-    >
-   </div>
+      <div class="about-copy">
 
+        <p>
+          Olá! Sou <strong>Valéria Galdino</strong>, estudante de
+          <strong>Cibersegurança</strong>, interessada em tecnologia,
+          programação e segurança da informação.
+        </p>
+
+        <p>
+          Estou construindo minha trajetória por meio dos estudos,
+          da prática e do desenvolvimento de projetos. Tenho interesse
+          em compreender como os sistemas funcionam e como podemos
+          protegê-los.
+        </p>
+
+        <p>
+          Este portfólio reúne minha evolução acadêmica, meus projetos
+          e as habilidades que venho desenvolvendo no universo da tecnologia.
+        </p>
+
+        <div class="about-note">
+          Curiosidade, criatividade e aprendizado contínuo fazem parte
+          da minha jornada na tecnologia.
+        </div>
+
+      </div>
+
+      <div class="about-art">
+        <div class="art-glow"></div>
+
+        <img
+          class="cutout"
+          data-remove-white
+          src="./assets/902528ED-AB60-4CED-9112-F84AAC08C8DF.png"
+          alt="Gatinho unicórnio ilustrado"
+          loading="lazy"
+        >
+      </div>
+
+    </div>
   </div>
- </div>
 </section>
 
 <!-- PROJETOS -->
 
 <section class="section" id="projetos">
- <div class="container">
+  <div class="container">
 
-  <div class="section-head">
-   <div class="eyebrow">Prática e desenvolvimento</div>
-   <h2 class="section-title">Projetos em <span class="gradient">destaque</span></h2>
-   <p class="section-desc">
-    Projetos que representam minha prática e evolução em programação e tecnologia.
-   </p>
+    <div class="section-head">
+
+      <div class="eyebrow">Prática e desenvolvimento</div>
+
+      <h2 class="section-title">
+        Projetos em <span class="gradient">destaque</span>
+      </h2>
+
+      <p class="section-desc">
+        Projetos que representam minha prática e evolução em programação
+        e tecnologia.
+      </p>
+
+    </div>
+
+    <div class="projects">
+
+      <article class="project">
+
+        <div class="project-visual">
+          <img
+            class="cutout"
+            data-remove-white
+            src="./assets/Gerador%20de%20Senhas%20Neon.png"
+            alt="Gerador de senhas"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="project-body">
+
+          <span class="project-no">PROJETO 01</span>
+
+          <h3>Gerador de Senhas</h3>
+
+          <p>
+            Projeto de programação para praticar lógica e explorar
+            a criação de senhas.
+          </p>
+
+          <div class="project-tags">
+            <span>Python</span>
+            <span>Lógica</span>
+            <span>Segurança</span>
+          </div>
+
+          <a
+            class="project-link"
+            href="https://github.com/vgaldino01-glitch"
+            target="_blank"
+            rel="noopener"
+          >
+            Ver no GitHub ↗
+          </a>
+
+        </div>
+      </article>
+
+      <article class="project">
+
+        <div class="project-visual">
+          <img
+            class="cutout"
+            data-remove-white
+            src="./assets/Calculadora%20Neon%20em%20Python.png"
+            alt="Calculadora em Python"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="project-body">
+
+          <span class="project-no">PROJETO 02</span>
+
+          <h3>Calculadora em Python</h3>
+
+          <p>
+            Aplicação de operações matemáticas e fundamentos
+            de lógica de programação.
+          </p>
+
+          <div class="project-tags">
+            <span>Python</span>
+            <span>Algoritmos</span>
+          </div>
+
+          <a
+            class="project-link"
+            href="https://github.com/vgaldino01-glitch"
+            target="_blank"
+            rel="noopener"
+          >
+            Ver no GitHub ↗
+          </a>
+
+        </div>
+      </article>
+
+      <article class="project">
+
+        <div class="project-visual">
+          <img
+            class="cutout"
+            data-remove-white
+            src="./assets/Esporte%20para%20Todos%20em%20Neon.png"
+            alt="Projeto Esporte para Todos"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="project-body">
+
+          <span class="project-no">PROJETO 03</span>
+
+          <h3>Esporte para Todos</h3>
+
+          <p>
+            Projeto com foco em inclusão e acesso ao esporte.
+          </p>
+
+          <div class="project-tags">
+            <span>Projeto</span>
+            <span>Inclusão</span>
+          </div>
+
+          <a
+            class="project-link"
+            href="https://github.com/vgaldino01-glitch"
+            target="_blank"
+            rel="noopener"
+          >
+            Ver no GitHub ↗
+          </a>
+
+        </div>
+      </article>
+
+    </div>
   </div>
-
-  <div class="projects">
-
-   <article class="project">
-    <div class="project-visual">
-     <img
-      data-remove-white
-      class="cutout"
-      src="./assets/Gerador%20de%20Senhas%20Neon.png"
-      alt="Ilustração do gerador de senhas"
-      loading="lazy"
-     >
-    </div>
-
-    <div class="project-body">
-     <span class="project-no">PROJETO 01</span>
-     <h3>Gerador de Senhas</h3>
-     <p>
-      Projeto de programação para praticar lógica e explorar a criação de senhas.
-     </p>
-     <div class="project-tags">
-      <span>Python</span>
-      <span>Lógica</span>
-      <span>Segurança</span>
-     </div>
-     <a class="project-link" href="https://github.com/vgaldino01-glitch" target="_blank" rel="noopener">Ver no GitHub ↗</a>
-    </div>
-   </article>
-
-   <article class="project">
-    <div class="project-visual">
-     <img
-      data-remove-white
-      class="cutout"
-      src="./assets/Calculadora%20Neon%20em%20Python.png"
-      alt="Ilustração da calculadora em Python"
-      loading="lazy"
-     >
-    </div>
-
-    <div class="project-body">
-     <span class="project-no">PROJETO 02</span>
-     <h3>Calculadora em Python</h3>
-     <p>
-      Aplicação de operações matemáticas e fundamentos de lógica de programação.
-     </p>
-     <div class="project-tags">
-      <span>Python</span>
-      <span>Algoritmos</span>
-     </div>
-     <a class="project-link" href="https://github.com/vgaldino01-glitch" target="_blank" rel="noopener">Ver no GitHub ↗</a>
-    </div>
-   </article>
-
-   <article class="project">
-    <div class="project-visual">
-     <img
-      data-remove-white
-      class="cutout"
-      src="./assets/Esporte%20para%20Todos%20em%20Neon.png"
-      alt="Ilustração do projeto Esporte para Todos"
-      loading="lazy"
-     >
-    </div>
-
-    <div class="project-body">
-     <span class="project-no">PROJETO 03</span>
-     <h3>Esporte para Todos</h3>
-     <p>
-      Projeto com foco em inclusão e acesso ao esporte.
-     </p>
-     <div class="project-tags">
-      <span>Projeto</span>
-      <span>Inclusão</span>
-     </div>
-     <a class="project-link" href="https://github.com/vgaldino01-glitch" target="_blank" rel="noopener">Ver no GitHub ↗</a>
-    </div>
-   </article>
-
-  </div>
- </div>
 </section>
 
 <!-- HABILIDADES -->
 
 <section class="section" id="habilidades">
- <div class="container">
+  <div class="container">
 
-  <div class="section-head">
-   <div class="eyebrow">Tecnologias e conhecimentos</div>
-   <h2 class="section-title">Minhas <span class="gradient">habilidades</span></h2>
-   <p class="section-desc">
-    Conhecimentos que fazem parte da minha formação e do meu desenvolvimento profissional.
-   </p>
+    <div class="section-head">
+
+      <div class="eyebrow">Tecnologias e conhecimentos</div>
+
+      <h2 class="section-title">
+        Minhas <span class="gradient">habilidades</span>
+      </h2>
+
+      <p class="section-desc">
+        Conhecimentos que fazem parte da minha formação e
+        do meu desenvolvimento profissional.
+      </p>
+
+    </div>
+
+    <div class="skills-wrap">
+
+      <!-- PROGRAMAÇÃO -->
+
+      <article class="skill-feature">
+
+        <img
+          class="skill-art cutout"
+          data-remove-white
+          src="./assets/B558D954-68A1-4555-8546-FF97BCD34980.png"
+          alt="Gatinho programador com notebook e código"
+          loading="lazy"
+        >
+
+        <div class="skill-copy">
+
+          <h3>Programação</h3>
+
+          <p>
+            Fundamentos de desenvolvimento e raciocínio lógico.
+          </p>
+
+          <div class="skill-list">
+            <span>Python</span>
+            <span>Algoritmos</span>
+            <span>Lógica</span>
+            <span>HTML</span>
+            <span>CSS</span>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- CIBERSEGURANÇA -->
+
+      <article class="skill-feature security">
+
+        <img
+          class="skill-art cutout"
+          data-remove-white
+          src="./assets/F85CF7EC-A1FD-4E3A-A87D-239617FCED57.png"
+          alt="Gatinho com headset e notebook de segurança"
+          loading="lazy"
+        >
+
+        <div class="skill-copy">
+
+          <h3>Cibersegurança</h3>
+
+          <p>
+            Formação e fundamentos da proteção de sistemas
+            e informações.
+          </p>
+
+          <div class="skill-list">
+            <span>Segurança digital</span>
+            <span>Proteção de dados</span>
+            <span>Segurança da informação</span>
+          </div>
+
+        </div>
+      </article>
+
+    </div>
+
+    <!-- FERRAMENTAS E APRENDIZADO -->
+
+    <div class="knowledge">
+
+      <div class="knowledge-title">
+        Ferramentas e aprendizado
+      </div>
+
+      <div class="knowledge-items">
+
+        <div class="knowledge-item">
+
+          <img
+            class="cutout"
+            data-remove-white
+            src="./assets/Adesivo%20Octocat%20Git%20Rosa%20e%20Roxo.png"
+            alt="Ícone GitHub"
+            loading="lazy"
+          >
+
+          <span>GitHub</span>
+
+        </div>
+
+        <div class="knowledge-item">
+
+          <img
+            class="cutout"
+            data-remove-white
+            src="./assets/Emblema%20Brilhante%20de%20Logica%20de%20Programacao.png"
+            alt="Emblema de lógica de programação"
+            loading="lazy"
+          >
+
+          <span>Lógica de programação</span>
+
+        </div>
+
+        <div class="knowledge-item">
+
+          <img
+            class="cutout"
+            data-remove-white
+            src="./assets/Botao%20brilhante%20com%20logo%20Python.png"
+            alt="Ícone Python"
+            loading="lazy"
+          >
+
+          <span>Python</span>
+
+        </div>
+
+        <div class="knowledge-item">
+
+          <img
+            class="cutout"
+            data-remove-white
+            src="./assets/Livros%20Coloridos%20e%20Planta%20do%20Conhecimento.png"
+            alt="Livros coloridos e planta do conhecimento"
+            loading="lazy"
+          >
+
+          <span>Aprendizado contínuo</span>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PROFICIÊNCIA EM INGLÊS -->
+
+    <div class="language-card">
+
+      <div class="language-icon">EN</div>
+
+      <div class="language-info">
+
+        <span class="language-label">IDIOMAS</span>
+
+        <h3>Inglês</h3>
+
+        <p>EF SET English Certificate</p>
+
+        <div class="language-level">
+          <strong>A2</strong>
+          <span>Listening — Escuta</span>
+        </div>
+
+        <div class="language-level">
+          <strong>B2</strong>
+          <span>Reading — Leitura</span>
+        </div>
+
+        <p class="language-description">
+          Proficiência demonstrada separadamente por habilidade.
+          Níveis apresentados conforme os resultados da avaliação.
+        </p>
+
+      </div>
+    </div>
+
   </div>
-
-  <div class="skills-wrap">
-
-   <article class="skill-feature">
-
-    <img
-     class="skill-art cutout"
-     data-remove-white
-     src="./assets/B558D954-68A1-4555-8546-FF97BCD34980.png"
-     alt="Gatinho programador com notebook e código"
-     loading="lazy"
-    >
-
-    <div class="skill-copy">
-     <h3>Programação</h3>
-     <p>Fundamentos de desenvolvimento e raciocínio lógico.</p>
-
-     <div class="skill-list">
-      <span>Python</span>
-      <span>Algoritmos</span>
-      <span>Lógica</span>
-      <span>HTML</span>
-      <span>CSS</span>
-     </div>
-    </div>
-
-   </article>
-
-   <article class="skill-feature security">
-
-    <img
-     class="skill-art cutout"
-     data-remove-white
-     src="./assets/F85CF7EC-A1FD-4E3A-A87D-239617FCED57.png"
-     alt="Gatinho com headset e notebook de segurança"
-     loading="lazy"
-    >
-
-    <div class="skill-copy">
-     <h3>Cibersegurança</h3>
-     <p>Formação e fundamentos da proteção de sistemas e informações.</p>
-
-     <div class="skill-list">
-      <span>Segurança digital</span>
-      <span>Proteção de dados</span>
-      <span>Segurança da informação</span>
-     </div>
-    </div>
-
-   </article>
-
-  </div>
-
-  <!-- FERRAMENTAS E APRENDIZADO -->
-
-  <div class="knowledge">
-
-   <div class="knowledge-title">Ferramentas e aprendizado</div>
-
-   <div class="knowledge-items">
-
-    <div class="knowledge-item">
-     <img
-      class="cutout"
-      data-remove-white
-      src="./assets/Adesivo%20Octocat%20Git%20Rosa%20e%20Roxo.png"
-      alt="Ícone GitHub"
-      loading="lazy"
-     >
-     <span>GitHub</span>
-    </div>
-
-    <div class="knowledge-item">
-     <img
-      class="cutout"
-      data-remove-white
-      src="./assets/Emblema%20Brilhante%20de%20Logica%20de%20Programacao.png"
-      alt="Emblema de lógica de programação"
-      loading="lazy"
-     >
-     <span>Lógica de programação</span>
-    </div>
-
-    <div class="knowledge-item">
-     <img
-      class="cutout"
-      data-remove-white
-      src="./assets/Botao%20brilhante%20com%20logo%20Python.png"
-      alt="Ícone Python"
-      loading="lazy"
-     >
-     <span>Python</span>
-    </div>
-
-    <div class="knowledge-item">
-     <img
-      class="cutout"
-      data-remove-white
-      src="./assets/Livros%20Coloridos%20e%20Planta%20do%20Conhecimento.png"
-      alt="Livros coloridos e planta do conhecimento"
-      loading="lazy"
-     >
-     <span>Aprendizado contínuo</span>
-    </div>
-
-   </div>
-  </div>
-
- </div>
 </section>
 
 </main>
@@ -1168,70 +1528,92 @@ footer {
 <!-- RODAPÉ -->
 
 <footer>
- <div class="container footer-inner">
+  <div class="container footer-inner">
 
-  <div>
-   <div class="footer-brand">VG.CYBER</div>
-   <div class="footer-copy">
-    Desenvolvido por Valéria Galdino · © 2026
-   </div>
+    <div>
+      <div class="footer-brand">VG.CYBER</div>
+
+      <div class="footer-copy">
+        Desenvolvido por Valéria Galdino · © 2026
+      </div>
+    </div>
+
+    <div class="footer-links">
+
+      <a
+        href="https://github.com/vgaldino01-glitch"
+        target="_blank"
+        rel="noopener"
+      >
+        GitHub ↗
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/val%C3%A9ria-galdino-ferreira-666b1762/"
+        target="_blank"
+        rel="noopener"
+      >
+        LinkedIn ↗
+      </a>
+
+    </div>
+
   </div>
-
-  <div class="footer-links">
-   <a href="https://github.com/vgaldino01-glitch" target="_blank" rel="noopener">GitHub ↗</a>
-   <a href="https://www.linkedin.com/in/val%C3%A9ria-galdino-ferreira-666b1762/" target="_blank" rel="noopener">LinkedIn ↗</a>
-  </div>
-
- </div>
 </footer>
 
 <script>
 
 /* MENU MOBILE */
 
-const menuBtn = document.getElementById('menuBtn');
-const navLinks = document.getElementById('navLinks');
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
 
-menuBtn.addEventListener('click', () => {
-  const opened = navLinks.classList.toggle('active');
+menuBtn.addEventListener("click", () => {
 
-  menuBtn.setAttribute('aria-expanded', String(opened));
-  menuBtn.textContent = opened ? '✕' : '☰';
+  const opened = navLinks.classList.toggle("active");
+
+  menuBtn.setAttribute("aria-expanded", String(opened));
+  menuBtn.textContent = opened ? "✕" : "☰";
+
 });
 
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('active');
-    menuBtn.setAttribute('aria-expanded', 'false');
-    menuBtn.textContent = '☰';
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+  link.addEventListener("click", () => {
+
+    navLinks.classList.remove("active");
+    menuBtn.setAttribute("aria-expanded", "false");
+    menuBtn.textContent = "☰";
+
   });
+
 });
 
 /*
- REMOVE FUNDO BRANCO CONECTADO ÀS BORDAS
+  REMOÇÃO DO FUNDO BRANCO DAS ILUSTRAÇÕES
 
- Preserva as partes brancas internas das ilustrações.
- Não modifica os arquivos originais do GitHub.
+  Remove o branco conectado às bordas externas.
+  Preserva áreas brancas isoladas dentro dos desenhos.
 */
 
 function removeConnectedWhite(img) {
 
-  if (img.dataset.processed === 'yes' || !img.naturalWidth) return;
+  if (
+    img.dataset.processed === "yes" ||
+    !img.naturalWidth
+  ) return;
 
   try {
 
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d', {
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d", {
       willReadFrequently:true
     });
 
-    canvas.width = img.naturalWidth;
-    canvas.height = img.naturalHeight;
+    const w = canvas.width = img.naturalWidth;
+    const h = canvas.height = img.naturalHeight;
 
     ctx.drawImage(img,0,0);
-
-    const w = canvas.width;
-    const h = canvas.height;
 
     const frame = ctx.getImageData(0,0,w,h);
     const d = frame.data;
@@ -1242,85 +1624,157 @@ function removeConnectedWhite(img) {
     let head = 0;
     let tail = 0;
 
-    const isBackground = i => {
+    function isWhiteBackground(p) {
 
-      const r = d[i*4];
-      const g = d[i*4+1];
-      const b = d[i*4+2];
+      const i = p*4;
 
-      return r > 238 &&
-             g > 238 &&
-             b > 238 &&
-             Math.max(r,g,b) - Math.min(r,g,b) < 24;
-    };
+      const r = d[i];
+      const g = d[i+1];
+      const b = d[i+2];
 
-    const add = i => {
+      return (
+        Math.min(r,g,b) > 220 &&
+        Math.max(r,g,b)-Math.min(r,g,b) < 35
+      );
 
-      if (i < 0 || i >= w*h || visited[i]) return;
+    }
 
-      visited[i] = 1;
+    function add(p) {
 
-      if (isBackground(i)) {
-        queue[tail++] = i;
+      if (
+        p < 0 ||
+        p >= w*h ||
+        visited[p]
+      ) return;
+
+      visited[p] = 1;
+
+      if (isWhiteBackground(p)) {
+        queue[tail++] = p;
       }
-    };
 
-    /* Detecta o fundo a partir das bordas */
+    }
+
+    /* Detecta o fundo pelas bordas */
 
     for (let x=0; x<w; x++) {
       add(x);
       add((h-1)*w+x);
     }
 
-    for (let y=1; y<h-1; y++) {
+    for (let y=0; y<h; y++) {
       add(y*w);
       add(y*w+w-1);
     }
 
-    /* Percorre somente os pixels conectados ao exterior */
+    /* Percorre apenas os pixels conectados ao exterior */
 
     while (head < tail) {
 
       const p = queue[head++];
 
-      d[p*4+3] = 0;
+      const x = p%w;
+      const y = Math.floor(p/w);
 
-      const x = p % w;
-      const y = (p/w) | 0;
+      if (x>0) add(p-1);
+      if (x<w-1) add(p+1);
+      if (y>0) add(p-w);
+      if (y<h-1) add(p+w);
 
-      if (x > 0) add(p-1);
-      if (x < w-1) add(p+1);
-      if (y > 0) add(p-w);
-      if (y < h-1) add(p+w);
+    }
+
+    /* Remove o fundo */
+
+    for (let p=0; p<w*h; p++) {
+
+      const i = p*4;
+
+      if (visited[p]) {
+        d[i+3] = 0;
+        continue;
+      }
+
+      const r = d[i];
+      const g = d[i+1];
+      const b = d[i+2];
+
+      const min = Math.min(r,g,b);
+      const max = Math.max(r,g,b);
+
+      if (min > 180 && max-min < 35) {
+
+        let nearBackground = false;
+
+        const x = p%w;
+        const y = Math.floor(p/w);
+
+        for (let dy=-1; dy<=1; dy++) {
+
+          for (let dx=-1; dx<=1; dx++) {
+
+            const nx = x+dx;
+            const ny = y+dy;
+
+            if (
+              nx>=0 && nx<w &&
+              ny>=0 && ny<h &&
+              visited[ny*w+nx]
+            ) {
+              nearBackground = true;
+            }
+
+          }
+
+        }
+
+        if (nearBackground) {
+
+          d[i+3] = Math.min(
+            d[i+3],
+            Math.max(
+              0,
+              Math.round((225-min)*4.5)
+            )
+          );
+
+        }
+
+      }
+
     }
 
     ctx.putImageData(frame,0,0);
 
-    img.src = canvas.toDataURL('image/png');
-    img.dataset.processed = 'yes';
+    img.dataset.processed = "yes";
+    img.src = canvas.toDataURL("image/png");
 
-  } catch (error) {
+  } catch(error) {
 
-    /*
-      Caso o navegador não permita processar o canvas,
-      a imagem original continua visível.
-    */
+    console.warn(
+      "Não foi possível remover o fundo da imagem:",
+      error
+    );
 
-    img.dataset.processed = 'fallback';
+    img.dataset.processed = "fallback";
 
   }
+
 }
 
-/* Processa as ilustrações inclusive após carregamento */
+/* Processa as ilustrações após carregar */
 
-document.querySelectorAll('img[data-remove-white]').forEach(img => {
+document.querySelectorAll("img[data-remove-white]").forEach(img => {
 
-  if (img.complete) {
+  if (img.complete && img.naturalWidth) {
+
     removeConnectedWhite(img);
+
   } else {
-    img.addEventListener('load', () => {
+
+    img.addEventListener("load",() => {
       removeConnectedWhite(img);
-    }, {once:true});
+    },{once:true});
+
   }
 
 });
