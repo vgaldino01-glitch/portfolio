@@ -4,10 +4,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#100820">
+<meta name="theme-color" content="#10091f">
 
-<title>Valéria Galdino | Cybersecurity Portfolio</title>
-<meta name="description" content="Portfólio de Valéria Galdino, estudante de Cibersegurança. Projetos, programação, tecnologia e segurança da informação.">
+<title>Valéria Galdino | Cybersecurity</title>
+<meta name="description" content="Portfólio profissional de Valéria Galdino. Cibersegurança, programação, tecnologia e projetos.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,15 +15,17 @@
 
 <style>
 :root {
-  --bg: #100820;
-  --bg-light: #1b1031;
-  --card: #211338;
+  --bg: #10091f;
+  --bg2: #190e2d;
+  --surface: #211536;
+  --surface2: #291b40;
   --purple: #a855f7;
   --pink: #f472d0;
   --cyan: #67e8f9;
   --white: #f8f4ff;
-  --muted: #c4b5d8;
-  --border: rgba(168,85,247,.35);
+  --muted: #bdb1d0;
+  --line: rgba(192,132,252,.2);
+  --glow: rgba(168,85,247,.2);
 }
 
 * {
@@ -41,45 +43,96 @@ body {
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 
 img {
   max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+}
+
+.container {
+  width: min(1120px, calc(100% - 44px));
+  margin: auto;
+}
+
+.section {
+  padding: 105px 0;
+  position: relative;
+}
+
+.section-heading {
+  margin-bottom: 45px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--cyan);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 1px;
+  background: var(--cyan);
+}
+
+.section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(26px, 4vw, 38px);
+  margin-top: 12px;
+  line-height: 1.3;
+}
+
+.section-title span {
+  color: var(--pink);
+}
+
+.section-description {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+  max-width: 620px;
+  margin-top: 13px;
 }
 
 /* BACKGROUND */
 
-.space {
+.background-glow {
   position: fixed;
   inset: 0;
-  z-index: -2;
+  z-index: -3;
   pointer-events: none;
   background:
-    radial-gradient(ellipse at 15% 20%, rgba(126,34,206,.17), transparent 38%),
-    radial-gradient(ellipse at 85% 60%, rgba(219,39,119,.10), transparent 35%),
-    #100820;
+    radial-gradient(ellipse at 10% 15%, rgba(124,58,237,.18), transparent 38%),
+    radial-gradient(ellipse at 90% 45%, rgba(219,39,119,.10), transparent 35%),
+    radial-gradient(ellipse at 50% 100%, rgba(14,165,233,.06), transparent 45%),
+    var(--bg);
 }
 
 .stars {
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: -2;
   pointer-events: none;
+  opacity: .5;
   background-image:
-    radial-gradient(2px 2px at 20% 30%, #fff 50%, transparent 100%),
-    radial-gradient(2px 2px at 70% 60%, #d8a5ff 50%, transparent 100%),
-    radial-gradient(2px 2px at 40% 80%, #fff 50%, transparent 100%),
-    radial-gradient(2px 2px at 90% 20%, #f9a8d4 50%, transparent 100%),
-    radial-gradient(2px 2px at 10% 70%, #67e8f9 50%, transparent 100%);
-  background-size: 260px 260px;
-  animation: twinkle 5s infinite alternate;
-}
-
-@keyframes twinkle {
-  from { opacity: .35; }
-  to { opacity: .95; }
+    radial-gradient(1px 1px at 20% 30%, white 99%, transparent),
+    radial-gradient(1px 1px at 70% 60%, #d8b4fe 99%, transparent),
+    radial-gradient(2px 2px at 40% 80%, white 99%, transparent),
+    radial-gradient(1px 1px at 90% 20%, #f9a8d4 99%, transparent);
+  background-size: 240px 240px;
 }
 
 /* HEADER */
@@ -89,18 +142,18 @@ header {
   top: 0;
   width: 100%;
   z-index: 100;
-  background: rgba(16,8,32,.94);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid var(--border);
+  background: rgba(16,9,31,.91);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--line);
 }
 
-nav {
-  max-width: 1150px;
+.nav {
+  width: min(1120px, calc(100% - 44px));
   margin: auto;
-  padding: 18px 25px;
+  min-height: 75px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .logo {
@@ -108,483 +161,726 @@ nav {
   font-size: 20px;
   font-weight: 800;
   background: linear-gradient(90deg,var(--pink),var(--purple),var(--cyan));
-  -webkit-background-clip: text;
-  background-clip: text;
   color: transparent;
-  text-shadow: 0 0 15px rgba(168,85,247,.3);
+  background-clip: text;
+  -webkit-background-clip: text;
+  letter-spacing: -1px;
 }
 
 .nav-links {
   display: flex;
+  align-items: center;
+  gap: 25px;
   list-style: none;
-  gap: 23px;
 }
 
 .nav-links a {
+  font-size: 12px;
   color: var(--muted);
-  font-size: 13px;
-  transition: .3s;
+  transition: .25s;
 }
 
 .nav-links a:hover {
   color: var(--cyan);
 }
 
-.menu-btn {
+.menu-button {
   display: none;
-  background: none;
-  border: none;
+  background: transparent;
+  border: 0;
   color: white;
   font-size: 27px;
   cursor: pointer;
 }
 
-/* GENERAL */
-
-section {
-  max-width: 1150px;
-  margin: auto;
-  padding: 105px 25px 65px;
-}
-
-.section-title {
-  font-family: 'Orbitron', sans-serif;
-  font-size: clamp(24px,4vw,34px);
-  text-align: center;
-  margin-bottom: 42px;
-}
-
-.section-title span {
-  color: var(--pink);
-}
-
-.section-subtitle {
-  text-align: center;
-  color: var(--muted);
-  font-size: 13px;
-  margin-top: -27px;
-  margin-bottom: 35px;
-}
-
-.gradient {
-  background: linear-gradient(90deg,var(--pink),var(--purple),var(--cyan));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.tag {
-  color: var(--cyan);
-  letter-spacing: 2px;
-  font-size: 12px;
-  text-transform: uppercase;
-}
-
 /* HERO */
 
 .hero {
-  min-height: 100vh;
-  display: flex;
+  min-height: 760px;
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
   align-items: center;
-  justify-content: space-between;
   gap: 55px;
-  padding-top: 130px;
+  padding-top: 115px;
+  padding-bottom: 75px;
 }
 
-.hero-content {
-  flex: 1;
+.hero-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--cyan);
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  background: #4ade80;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #4ade80;
 }
 
 .hero h1 {
   font-family: 'Orbitron', sans-serif;
-  font-size: clamp(32px,5vw,55px);
-  line-height: 1.35;
-  margin: 18px 0;
+  font-size: clamp(37px, 5vw, 61px);
+  line-height: 1.22;
+  margin: 23px 0 18px;
+  letter-spacing: -2px;
 }
 
-.hero h2 {
-  font-size: 19px;
+.gradient-text {
+  background: linear-gradient(100deg,var(--pink),var(--purple),var(--cyan));
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.hero-role {
+  font-size: 18px;
   color: var(--cyan);
-  margin-bottom: 20px;
+  font-weight: 600;
+  margin-bottom: 17px;
 }
 
-.hero p {
-  max-width: 620px;
-  color: var(--muted);
-  line-height: 1.9;
+.hero-description {
+  max-width: 560px;
   font-size: 14px;
+  color: var(--muted);
+  line-height: 2;
 }
 
-/* PROFILE PHOTO */
-
-.hero-photo-frame {
-  width: 290px;
-  height: 290px;
-  flex-shrink: 0;
-  position: relative;
-  padding: 7px;
-  border-radius: 50%;
-  background: linear-gradient(135deg,var(--pink),var(--purple),var(--cyan));
-  box-shadow:
-    0 0 22px rgba(168,85,247,.7),
-    0 0 55px rgba(244,114,208,.25);
-  animation: floating 4s ease-in-out infinite;
-}
-
-.hero-image {
-  width: 100%;
-  height: 100%;
-  display: block;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center 35%;
-  border: 5px solid #160b2d;
-  background: var(--bg-light);
-}
-
-@keyframes floating {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.photo-decoration {
-  position: absolute;
-  right: 3px;
-  bottom: 20px;
-  color: var(--cyan);
-  font-size: 32px;
-  text-shadow: 0 0 15px var(--cyan);
-}
-
-/* BUTTONS */
-
-.buttons {
+.hero-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 27px;
+  gap: 13px;
+  margin-top: 28px;
 }
 
-.btn {
-  display: inline-block;
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 12px 22px;
   border-radius: 30px;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   transition: .3s;
   border: 1px solid var(--purple);
 }
 
-.btn-primary {
-  background: linear-gradient(90deg,var(--purple),#7c3aed);
+.button-primary {
+  background: linear-gradient(100deg,#9333ea,#7c3aed);
   color: white;
+  box-shadow: 0 5px 25px rgba(147,51,234,.2);
 }
 
-.btn-outline {
+.button-secondary {
   color: var(--cyan);
-  background: transparent;
+  background: rgba(255,255,255,.025);
 }
 
-.btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 20px rgba(168,85,247,.5);
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 22px var(--glow);
 }
 
-/* DECORATIVE IMAGES */
-
-.decor-row {
+.hero-tags {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 30px;
+}
+
+.hero-tags span {
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  padding: 7px 12px;
+  font-size: 10px;
+  background: rgba(255,255,255,.025);
+}
+
+/* HERO VISUAL */
+
+.hero-visual {
+  position: relative;
+  min-height: 470px;
+  display: flex;
   align-items: center;
-  gap: 35px;
-  margin: 30px auto 0;
+  justify-content: center;
 }
 
-.decor-image {
-  width: 85px;
-  height: 85px;
+.portrait-frame {
+  width: min(310px, 75vw);
+  height: 390px;
+  padding: 6px;
+  border-radius: 155px 155px 35px 35px;
+  background: linear-gradient(145deg,var(--pink),var(--purple),var(--cyan));
+  box-shadow:
+    0 0 35px rgba(168,85,247,.3),
+    0 0 85px rgba(168,85,247,.12);
+  position: relative;
+  z-index: 2;
+}
+
+.portrait-inner {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 150px 150px 30px 30px;
+  background: #24153b;
+  border: 4px solid var(--bg);
+  position: relative;
+}
+
+.portrait-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.portrait-fallback {
+  display: none;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(145deg,#291342,#150d27);
+  color: var(--pink);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 65px;
+}
+
+.portrait-fallback small {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+.hero-cat {
+  position: absolute;
+  width: 155px;
+  height: 155px;
   object-fit: contain;
-  opacity: .85;
-  filter: drop-shadow(0 0 10px rgba(168,85,247,.3));
-  transition: .3s;
+  right: -22px;
+  bottom: 5px;
+  z-index: 3;
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,.4));
 }
 
-.decor-image:hover {
-  transform: translateY(-7px) rotate(4deg);
+.visual-orbit {
+  position: absolute;
+  width: 390px;
+  height: 390px;
+  border: 1px solid rgba(192,132,252,.18);
+  border-radius: 50%;
+  transform: rotate(-20deg);
+}
+
+.visual-orbit::before,
+.visual-orbit::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(103,232,249,.13);
+}
+
+.visual-orbit::before {
+  inset: 23px;
+}
+
+.visual-orbit::after {
+  inset: 48px;
+}
+
+.visual-star {
+  position: absolute;
+  color: var(--pink);
+  font-size: 25px;
+  text-shadow: 0 0 16px var(--pink);
+}
+
+.star-one {
+  top: 40px;
+  left: 20px;
+}
+
+.star-two {
+  right: 0;
+  top: 80px;
+  color: var(--cyan);
+}
+
+.star-three {
+  bottom: 35px;
+  left: 10px;
 }
 
 /* ABOUT */
 
-.about-box {
+.about-layout {
   display: grid;
-  grid-template-columns: 1fr 180px;
-  gap: 25px;
+  grid-template-columns: 1fr .85fr;
   align-items: center;
-  padding: 32px;
-  background: rgba(255,255,255,.045);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  box-shadow: 0 0 25px rgba(168,85,247,.08);
+  gap: 55px;
 }
 
-.about-text {
+.about-panel {
+  padding: 34px;
+  background: linear-gradient(145deg,rgba(38,23,60,.85),rgba(22,13,39,.9));
+  border: 1px solid var(--line);
+  border-radius: 23px;
+  position: relative;
+}
+
+.about-panel p {
   color: var(--muted);
-  line-height: 2;
-  font-size: 14px;
+  font-size: 13px;
+  line-height: 2.1;
+  margin-bottom: 15px;
 }
 
-.about-text strong {
+.about-panel strong {
   color: var(--cyan);
 }
 
-.about-illustration {
-  width: 170px;
-  height: 170px;
-  object-fit: contain;
-  filter: drop-shadow(0 0 12px rgba(168,85,247,.3));
+.about-note {
+  border-left: 2px solid var(--pink);
+  padding: 12px 15px;
+  background: rgba(244,114,208,.055);
+  color: #e9d5ff;
+  font-size: 12px;
+  line-height: 1.8;
+  border-radius: 0 10px 10px 0;
+  margin-top: 22px;
 }
 
-/* CARDS */
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-  gap: 23px;
+.about-art {
+  position: relative;
+  min-height: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.card {
-  background: linear-gradient(145deg,rgba(35,20,60,.96),rgba(16,8,32,.96));
-  border: 1px solid var(--border);
-  border-radius: 19px;
-  overflow: hidden;
-  padding: 19px;
-  transition: .35s;
+.about-art::before {
+  content: "";
+  position: absolute;
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  background: radial-gradient(circle,rgba(168,85,247,.2),transparent 70%);
 }
 
-.card:hover {
-  transform: translateY(-7px);
-  border-color: var(--pink);
-  box-shadow: 0 0 25px rgba(168,85,247,.2);
-}
-
-.card h3 {
-  color: var(--pink);
-  font-size: 17px;
-  margin-bottom: 12px;
-}
-
-.card p {
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.85;
-}
-
-.card-image {
+.about-art img {
+  position: relative;
+  z-index: 1;
   width: 100%;
-  height: 175px;
-  display: block;
+  max-width: 390px;
+  max-height: 320px;
   object-fit: contain;
-  object-position: center;
-  padding: 12px;
-  margin-bottom: 18px;
-  border-radius: 14px;
-  background: rgba(8,4,20,.8);
-  border: 1px solid rgba(103,232,249,.2);
-  transition: .35s;
+  filter: drop-shadow(0 15px 30px rgba(0,0,0,.3));
 }
 
-.card:hover .card-image {
-  transform: scale(1.035);
+/* PROJECTS */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 22px;
+}
+
+.project-card {
+  background: linear-gradient(145deg,rgba(37,24,59,.95),rgba(22,13,39,.95));
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: .3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(244,114,208,.55);
+  box-shadow: 0 15px 40px rgba(0,0,0,.2);
+}
+
+.project-image {
+  height: 205px;
+  margin: 12px;
+  border-radius: 13px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 50%,rgba(168,85,247,.18),transparent 70%),
+    #160d27;
+  border: 1px solid rgba(168,85,247,.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 10px;
+  transition: .4s;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+.project-info {
+  padding: 10px 21px 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-number {
+  color: var(--cyan);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.project-info h3 {
+  color: var(--white);
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.project-info p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+  flex: 1;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 16px 0;
+}
+
+.project-tech span {
+  color: var(--cyan);
+  font-size: 9px;
+  padding: 5px 9px;
+  border: 1px solid rgba(103,232,249,.2);
+  border-radius: 20px;
 }
 
 .project-link {
-  display: inline-block;
-  color: var(--cyan);
-  margin-top: 17px;
-  font-size: 13px;
+  color: var(--pink);
+  font-size: 12px;
   font-weight: 600;
+  margin-top: 5px;
 }
 
 /* SKILLS */
 
-.skill-category {
-  margin-bottom: 35px;
-}
-
-.skill-category h3 {
-  text-align: center;
-  color: var(--pink);
-  margin-bottom: 20px;
-  font-size: 17px;
-}
-
-.skill-grid {
+.skills-layout {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
-  gap: 17px;
+  grid-template-columns: 1fr 1fr;
+  gap: 23px;
 }
 
-.skill-card {
+.skill-panel {
+  background: rgba(255,255,255,.025);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 26px;
+}
+
+.skill-panel-heading {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
-  gap: 10px;
-  padding: 20px 12px;
-  background: rgba(255,255,255,.045);
-  border: 1px solid var(--border);
-  border-radius: 17px;
-  transition: .3s;
+  gap: 13px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 20px;
 }
 
-.skill-card:hover {
-  border-color: var(--cyan);
-  transform: translateY(-5px);
-}
-
-.skill-card img {
-  width: 65px;
-  height: 65px;
+.skill-panel-heading img {
+  width: 49px;
+  height: 49px;
   object-fit: contain;
 }
 
-.skill-card span {
-  color: var(--white);
-  font-size: 12px;
+.skill-panel-heading h3 {
+  font-size: 15px;
+  color: var(--pink);
 }
 
-/* TIMELINE */
-
-.timeline {
-  border-left: 2px solid var(--purple);
-  padding-left: 28px;
-  margin-left: 12px;
-}
-
-.timeline-item {
-  position: relative;
-  margin-bottom: 35px;
-}
-
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  background: var(--pink);
-  left: -36px;
-  top: 5px;
-  box-shadow: 0 0 12px var(--pink);
-}
-
-.timeline-item h3 {
-  color: var(--cyan);
-  font-size: 16px;
-}
-
-.timeline-item p {
+.skill-panel-heading p {
+  font-size: 10px;
   color: var(--muted);
-  font-size: 13px;
+  margin-top: 4px;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-pill {
+  padding: 9px 13px;
+  border-radius: 9px;
+  background: rgba(168,85,247,.09);
+  border: 1px solid rgba(168,85,247,.19);
+  color: #e9d5ff;
+  font-size: 11px;
+}
+
+.skill-pill:hover {
+  border-color: var(--cyan);
+}
+
+/* FEATURE VISUAL */
+
+.cyber-feature {
+  display: grid;
+  grid-template-columns: 1fr 230px;
+  align-items: center;
+  gap: 30px;
+  background: linear-gradient(110deg,rgba(45,23,73,.95),rgba(23,14,43,.95));
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 32px;
+  overflow: hidden;
+}
+
+.cyber-feature h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  margin: 13px 0;
+}
+
+.cyber-feature p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 2;
+}
+
+.cyber-feature img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,.3));
+}
+
+/* JOURNEY */
+
+.journey {
+  max-width: 800px;
+  margin: auto;
+  border-left: 1px solid rgba(168,85,247,.55);
+  padding-left: 30px;
+}
+
+.journey-item {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.journey-item::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--pink);
+  border-radius: 50%;
+  left: -36px;
+  top: 6px;
+  box-shadow: 0 0 13px var(--pink);
+}
+
+.journey-item h3 {
+  font-size: 15px;
+  color: var(--cyan);
+  margin-bottom: 8px;
+}
+
+.journey-item p {
+  font-size: 12px;
+  color: var(--muted);
   line-height: 1.9;
-  margin-top: 8px;
 }
 
 /* CERTIFICATE */
 
 .certificate {
+  background: linear-gradient(130deg,rgba(168,85,247,.13),rgba(244,114,208,.055));
+  border: 1px solid rgba(244,114,208,.35);
+  border-radius: 19px;
+  padding: 26px;
   margin-top: 20px;
-  padding: 25px;
-  background: linear-gradient(145deg,rgba(168,85,247,.15),rgba(244,114,208,.06));
-  border: 1px solid var(--pink);
-  border-radius: 18px;
+}
+
+.certificate-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
 }
 
 .certificate h3 {
   color: var(--pink);
+  font-size: 16px;
 }
 
 .certificate-score {
   font-family: 'Orbitron',sans-serif;
-  font-size: 37px;
+  font-size: 32px;
   color: var(--cyan);
-  margin: 12px 0;
+  margin: 17px 0 9px;
 }
 
-.level {
+.certificate-level {
   display: inline-block;
-  background: rgba(168,85,247,.2);
   color: var(--pink);
+  background: rgba(168,85,247,.17);
   padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 11px;
-  margin: 4px;
+  border-radius: 30px;
+  font-size: 10px;
 }
 
-.certificate p {
-  margin-top: 10px;
+.certificate-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0;
 }
 
-.certificate strong {
+.certificate-details div {
+  background: rgba(12,7,24,.35);
+  padding: 13px;
+  border-radius: 10px;
+}
+
+.certificate-details strong {
+  display: block;
   color: var(--cyan);
+  font-size: 12px;
+}
+
+.certificate-details span {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.certificate small {
+  color: var(--muted);
+  font-size: 10px;
 }
 
 /* CONTACT */
 
-.contact-box {
+.contact-card {
+  position: relative;
+  overflow: hidden;
   text-align: center;
-  padding: 40px 25px;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,.045);
-  border-radius: 20px;
+  padding: 55px 25px;
+  background: linear-gradient(135deg,rgba(50,25,78,.9),rgba(22,13,39,.95));
+  border: 1px solid var(--line);
+  border-radius: 25px;
 }
 
-.contact-box h3 {
-  color: var(--pink);
-  font-size: 20px;
+.contact-card h3 {
+  font-family: 'Orbitron',sans-serif;
+  font-size: clamp(22px,4vw,30px);
+  margin-bottom: 15px;
 }
 
-.contact-box p {
-  max-width: 650px;
-  margin: 15px auto 25px;
+.contact-card p {
+  max-width: 560px;
+  margin: auto;
   color: var(--muted);
-  font-size: 13px;
-  line-height: 1.9;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
 }
 
 /* FOOTER */
 
 footer {
+  border-top: 1px solid var(--line);
+  padding: 27px 20px;
   text-align: center;
-  padding: 30px 15px;
-  border-top: 1px solid var(--border);
   color: var(--muted);
-  font-size: 12px;
+  font-size: 11px;
 }
 
-footer span {
+footer strong {
   color: var(--pink);
 }
 
-/* MOBILE */
+/* RESPONSIVE */
 
-@media(max-width:760px) {
+@media(max-width:850px) {
+  .hero {
+    grid-template-columns: 1fr .8fr;
+    gap: 25px;
+  }
 
-  .menu-btn {
+  .hero-visual {
+    transform: scale(.9);
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media(max-width:680px) {
+  .container {
+    width: min(100% - 34px, 520px);
+  }
+
+  .nav {
+    width: calc(100% - 34px);
+    min-height: 68px;
+  }
+
+  .menu-button {
     display: block;
   }
 
   .nav-links {
     display: none;
     position: absolute;
-    top: 65px;
     left: 0;
+    top: 68px;
     width: 100%;
-    padding: 25px;
-    background: #160b2d;
+    background: rgba(19,11,34,.98);
+    padding: 22px;
     flex-direction: column;
-    text-align: center;
-    border-bottom: 1px solid var(--purple);
+    gap: 19px;
+    border-bottom: 1px solid var(--line);
   }
 
   .nav-links.active {
@@ -592,50 +888,100 @@ footer span {
   }
 
   .hero {
-    min-height: auto;
+    display: flex;
     flex-direction: column-reverse;
     text-align: center;
-    padding-top: 145px;
-    gap: 35px;
+    padding-top: 125px;
+    gap: 15px;
+    min-height: auto;
   }
 
-  .hero-photo-frame {
-    width: 210px;
-    height: 210px;
+  .hero-visual {
+    min-height: 350px;
+    width: 100%;
+    transform: scale(.82);
+    margin: -15px 0;
   }
 
-  .hero p {
+  .portrait-frame {
+    width: 260px;
+    height: 330px;
+  }
+
+  .visual-orbit {
+    width: 330px;
+    height: 330px;
+  }
+
+  .hero-cat {
+    width: 125px;
+    height: 125px;
+    right: 0;
+  }
+
+  .hero h1 {
+    font-size: 37px;
+  }
+
+  .hero-description {
     margin: auto;
   }
 
-  .buttons {
+  .hero-buttons,
+  .hero-tags {
     justify-content: center;
   }
 
-  .about-box {
+  .section {
+    padding: 75px 0;
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .about-art {
+    min-height: 250px;
+  }
+
+  .about-art img {
+    max-height: 260px;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-image {
+    height: 225px;
+  }
+
+  .skills-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .cyber-feature {
     grid-template-columns: 1fr;
     text-align: center;
-    padding: 23px;
   }
 
-  .about-illustration {
-    width: 130px;
-    height: 130px;
-    margin: auto;
+  .cyber-feature img {
+    max-height: 180px;
   }
 
-  .decor-image {
-    width: 60px;
-    height: 60px;
+  .certificate-details {
+    grid-template-columns: 1fr;
   }
 
-  section {
-    padding: 85px 20px 45px;
+  .certificate-top {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
 
 @media(prefers-reduced-motion:reduce) {
-  *, *::before, *::after {
+  *,*::before,*::after {
     scroll-behavior: auto !important;
     animation: none !important;
     transition: none !important;
@@ -646,401 +992,628 @@ footer span {
 
 <body>
 
-<div class="space"></div>
+<div class="background-glow"></div>
 <div class="stars"></div>
 
 <header>
-<nav>
-  <a href="#inicio" class="logo">VG.CYBER</a>
+  <nav class="nav">
 
-  <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">
-    ☰
-  </button>
+    <a href="#inicio" class="logo">VG.CYBER</a>
 
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#inicio">Início</a></li>
-    <li><a href="#sobre">Sobre</a></li>
-    <li><a href="#projetos">Projetos</a></li>
-    <li><a href="#habilidades">Habilidades</a></li>
-    <li><a href="#jornada">Jornada</a></li>
-    <li><a href="#contato">Contato</a></li>
-  </ul>
-</nav>
+    <button class="menu-button" id="menuButton"
+            aria-label="Abrir menu" aria-expanded="false">
+      ☰
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#jornada">Jornada</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+
+  </nav>
 </header>
 
 <main>
 
-<!-- HERO / APRESENTAÇÃO -->
+<!-- 01 - APRESENTAÇÃO -->
 
-<section class="hero" id="inicio">
+<section class="container hero" id="inicio">
 
-  <div class="hero-content">
+  <div class="hero-copy">
 
-    <span class="tag">Olá, mundo! ✨</span>
+    <div class="hero-label">
+      <span class="status-dot"></span>
+      Olá, mundo! Bem-vindo ao meu universo
+    </div>
 
     <h1>
-      Olá, eu sou
-      <span class="gradient">Valéria Galdino</span>
+      Olá, eu sou<br>
+      <span class="gradient-text">Valéria Galdino</span>
     </h1>
 
-    <h2>Estudante de Cibersegurança</h2>
+    <div class="hero-role">
+      Estudante de Cibersegurança
+    </div>
 
-    <p>
+    <p class="hero-description">
       Explorando o universo da tecnologia, segurança da informação
       e desenvolvimento. Construindo conhecimento, desenvolvendo
       projetos e transformando desafios em oportunidades.
     </p>
 
-    <div class="buttons">
-      <a href="#projetos" class="btn btn-primary">
-        Conheça meus projetos
+    <div class="hero-buttons">
+      <a href="#projetos" class="button button-primary">
+        Explorar projetos
       </a>
 
       <a href="https://github.com/vgaldino01-glitch"
          target="_blank" rel="noopener"
-         class="btn btn-outline">
+         class="button button-secondary">
         Meu GitHub
       </a>
     </div>
 
-    <div class="decor-row">
-      <img src="./assets/nuvens.png"
-           alt="Nuvens decorativas"
-           class="decor-image">
-
-      <img src="./assets/gatinhos.png"
-           alt="Gatinhos decorativos"
-           class="decor-image">
-
-      <img src="./assets/livros.png"
-           alt="Livros decorativos"
-           class="decor-image">
+    <div class="hero-tags">
+      <span>Cybersecurity</span>
+      <span>Technology</span>
+      <span>Development</span>
     </div>
 
   </div>
 
-  <div class="hero-photo-frame">
+  <div class="hero-visual">
+
+    <div class="visual-orbit"></div>
+
+    <span class="visual-star star-one">✦</span>
+    <span class="visual-star star-two">✧</span>
+    <span class="visual-star star-three">✦</span>
+
+    <div class="portrait-frame">
+      <div class="portrait-inner">
+
+        <img
+          src="./valeria%20profile.jpeg"
+          alt="Fotografia de Valéria Galdino"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        >
+
+        <div class="portrait-fallback">
+          VG
+          <small>Adicione sua fotografia pessoal</small>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- GATO UNICÓRNIO COMO ELEMENTO SECUNDÁRIO -->
     <img
-      src="./valeria%20profile.jpeg"
-      alt="Foto de perfil de Valéria Galdino"
-      class="hero-image"
+      class="hero-cat"
+      src="./assets/902528ED-AB60-4CED-9112-F84AAC08C8DF.png"
+      alt="Gatinho unicórnio decorativo"
     >
-    <span class="photo-decoration">✦</span>
-  </div>
-
-</section>
-
-<!-- SOBRE MIM -->
-
-<section id="sobre">
-
-  <h2 class="section-title">
-    Sobre <span>mim</span>
-  </h2>
-
-  <div class="about-box">
-
-    <div class="about-text">
-
-      <p>
-        Olá! Sou <strong>Valéria Galdino</strong>, estudante de
-        <strong>Cibersegurança</strong>, apaixonada por tecnologia,
-        aprendizado contínuo e pelo universo da segurança digital.
-      </p>
-
-      <br>
-
-      <p>
-        Estou desenvolvendo minhas habilidades em programação,
-        lógica computacional, segurança da informação e ferramentas
-        tecnológicas.
-      </p>
-
-      <br>
-
-      <p>
-        Acredito que a tecnologia pode transformar realidades.
-        Meu objetivo é construir uma trajetória profissional
-        sólida, com curiosidade, dedicação e prática constante.
-      </p>
-
-    </div>
-
-    <img src="./assets/gatinhos.png"
-         alt="Ilustração decorativa de gatinhos"
-         class="about-illustration">
 
   </div>
 
 </section>
 
-<!-- PROJETOS -->
 
-<section id="projetos">
+<!-- 02 - SOBRE MIM -->
 
-  <h2 class="section-title">
-    Meus <span>Projetos</span>
-  </h2>
+<section class="section" id="sobre">
 
-  <p class="section-subtitle">
-    Projetos acadêmicos e práticas de desenvolvimento.
-  </p>
+  <div class="container">
 
-  <div class="grid">
-
-    <article class="card">
-
-      <img src="./assets/gerador-senhas.png"
-           alt="Projeto Gerador de Senhas"
-           class="card-image">
-
-      <h3>🔐 Gerador de Senhas</h3>
-
-      <p>
-        Projeto de geração de senhas para explorar conceitos
-        de lógica de programação e segurança digital.
-      </p>
-
-      <a class="project-link"
-         href="https://github.com/vgaldino01-glitch"
-         target="_blank" rel="noopener">
-        Ver no GitHub →
-      </a>
-
-    </article>
-
-    <article class="card">
-
-      <img src="./assets/calculadora.png"
-           alt="Projeto Calculadora"
-           class="card-image">
-
-      <h3>🐍 Calculadora em Python</h3>
-
-      <p>
-        Projeto de programação com operações matemáticas,
-        estruturas lógicas e fundamentos da linguagem Python.
-      </p>
-
-      <a class="project-link"
-         href="https://github.com/vgaldino01-glitch"
-         target="_blank" rel="noopener">
-        Ver no GitHub →
-      </a>
-
-    </article>
-
-    <article class="card">
-
-      <img src="./assets/esporte-para-todos.png"
-           alt="Projeto Esporte para Todos"
-           class="card-image">
-
-      <h3>⚽ Esporte para Todos</h3>
-
-      <p>
-        Projeto voltado à inclusão e ao acesso ao esporte,
-        utilizando a tecnologia como ferramenta de apoio.
-      </p>
-
-      <a class="project-link"
-         href="https://github.com/vgaldino01-glitch"
-         target="_blank" rel="noopener">
-        Ver no GitHub →
-      </a>
-
-    </article>
-
-  </div>
-
-</section>
-
-<!-- HABILIDADES -->
-
-<section id="habilidades">
-
-  <h2 class="section-title">
-    Minhas <span>Habilidades</span>
-  </h2>
-
-  <p class="section-subtitle">
-    Conhecimentos e tecnologias em desenvolvimento.
-  </p>
-
-  <div class="skill-category">
-
-    <h3>💻 Programação e tecnologia</h3>
-
-    <div class="skill-grid">
-
-      <div class="skill-card">
-        <img src="./assets/python.png" alt="Python">
-        <span>Python</span>
-      </div>
-
-      <div class="skill-card">
-        <img src="./assets/github.png" alt="GitHub">
-        <span>GitHub</span>
-      </div>
-
-      <div class="skill-card">
-        <img src="./assets/logica.png" alt="Lógica">
-        <span>Lógica de programação</span>
-      </div>
-
-      <div class="skill-card">
-        <img src="./assets/crescimento.png" alt="Aprendizado">
-        <span>Aprendizado contínuo</span>
-      </div>
-
+    <div class="section-heading">
+      <span class="eyebrow">Conheça minha trajetória</span>
+      <h2 class="section-title">
+        Sobre <span>mim</span>
+      </h2>
     </div>
 
-  </div>
+    <div class="about-layout">
 
-  <div class="skill-category">
-
-    <h3>🔐 Segurança da informação</h3>
-
-    <div class="skill-grid">
-
-      <div class="skill-card">
-        <img src="./assets/escudo.png" alt="Segurança">
-        <span>Segurança digital</span>
-      </div>
-
-      <div class="skill-card">
-        <img src="./assets/seguranca-informacao.png"
-             alt="Segurança da informação">
-        <span>Segurança da informação</span>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- JORNADA -->
-
-<section id="jornada">
-
-  <h2 class="section-title">
-    Minha <span>Jornada</span>
-  </h2>
-
-  <div class="timeline">
-
-    <div class="timeline-item">
-
-      <h3>🎓 Formação em Cibersegurança</h3>
-
-      <p>
-        Graduanda em Cibersegurança, desenvolvendo conhecimentos
-        em tecnologia, segurança digital e programação.
-      </p>
-
-    </div>
-
-    <div class="timeline-item">
-
-      <h3>💻 Desenvolvimento de projetos</h3>
-
-      <p>
-        Prática com Python, lógica de programação e desenvolvimento
-        de projetos publicados no GitHub.
-      </p>
-
-    </div>
-
-    <div class="timeline-item">
-
-      <h3>🌎 Inglês – EF SET</h3>
-
-      <p>
-        Avaliação de proficiência em inglês realizada em
-        23 de novembro de 2026.
-      </p>
-
-      <div class="certificate">
-
-        <h3>EF SET English Certificate</h3>
-
-        <div class="certificate-score">38/100</div>
-
-        <span class="level">A2 – Elementary | Overall</span>
+      <div class="about-panel">
 
         <p>
-          📖 Reading:
-          <strong>B2 – Upper Intermediate</strong> (57/100)
+          Olá! Sou <strong>Valéria Galdino</strong>, estudante de
+          <strong>Cibersegurança</strong>, interessada em tecnologia,
+          programação e segurança da informação.
         </p>
 
         <p>
-          🎧 Listening:
-          <strong>A0 – Novice</strong> (18/100)
+          Estou construindo minha trajetória por meio dos estudos,
+          da prática e do desenvolvimento de projetos. Tenho interesse
+          em compreender como os sistemas funcionam e como podemos
+          protegê-los.
         </p>
 
         <p>
-          Foco no desenvolvimento da compreensão auditiva,
-          comunicação e vocabulário profissional.
+          Este portfólio reúne minha evolução acadêmica, meus projetos
+          e as habilidades que venho desenvolvendo no universo da tecnologia.
         </p>
 
-        <a href="https://cert.efset.org/KPmmQU"
-           target="_blank" rel="noopener"
-           class="btn btn-primary"
-           style="margin-top:18px">
-          Ver certificado oficial →
+        <div class="about-note">
+          Curiosidade, aprendizado contínuo e criatividade fazem parte
+          da minha jornada na tecnologia.
+        </div>
+
+      </div>
+
+      <!-- GATO PROGRAMADOR INTEGRADO À SEÇÃO -->
+      <div class="about-art">
+        <img
+          src="./assets/B558D954-68A1-4555-8546-FF97BCD34980.png"
+          alt="Gatinho programador com notebook"
+        >
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- 03 - PROJETOS -->
+
+<section class="section" id="projetos">
+
+  <div class="container">
+
+    <div class="section-heading">
+      <span class="eyebrow">Prática e desenvolvimento</span>
+      <h2 class="section-title">
+        Projetos em <span>destaque</span>
+      </h2>
+      <p class="section-description">
+        Uma seleção de projetos e experiências que fazem parte
+        da minha jornada de aprendizado.
+      </p>
+    </div>
+
+    <div class="project-grid">
+
+      <article class="project-card">
+
+        <div class="project-image">
+          <img
+            src="./assets/Gerador%20de%20Senhas%20Neon.png"
+            alt="Gerador de senhas"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="project-info">
+
+          <span class="project-number">PROJETO 01</span>
+
+          <h3>Gerador de Senhas</h3>
+
+          <p>
+            Projeto voltado à geração de senhas, explorando
+            conceitos de programação e fundamentos de segurança digital.
+          </p>
+
+          <div class="project-tech">
+            <span>Python</span>
+            <span>Lógica</span>
+            <span>Segurança</span>
+          </div>
+
+          <a class="project-link"
+             href="https://github.com/vgaldino01-glitch"
+             target="_blank" rel="noopener">
+            Explorar projeto ↗
+          </a>
+
+        </div>
+      </article>
+
+
+      <article class="project-card">
+
+        <div class="project-image">
+          <img
+            src="./assets/Calculadora%20Neon%20em%20Python.png"
+            alt="Calculadora em Python"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="project-info">
+
+          <span class="project-number">PROJETO 02</span>
+
+          <h3>Calculadora em Python</h3>
+
+          <p>
+            Aplicação de operações matemáticas e conceitos
+            fundamentais de lógica de programação.
+          </p>
+
+          <div class="project-tech">
+            <span>Python</span>
+            <span>Algoritmos</span>
+          </div>
+
+          <a class="project-link"
+             href="https://github.com/vgaldino01-glitch"
+             target="_blank" rel="noopener">
+            Explorar projeto ↗
+          </a>
+
+        </div>
+      </article>
+
+
+      <article class="project-card">
+
+        <div class="project-image">
+          <img
+            src="./assets/Esporte%20para%20Todos%20em%20Neon.png"
+            alt="Projeto Esporte para Todos"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="project-info">
+
+          <span class="project-number">PROJETO 03</span>
+
+          <h3>Esporte para Todos</h3>
+
+          <p>
+            Projeto de caráter social relacionado à inclusão
+            e ao acesso ao esporte.
+          </p>
+
+          <div class="project-tech">
+            <span>Projeto acadêmico</span>
+            <span>Inclusão</span>
+          </div>
+
+          <a class="project-link"
+             href="https://github.com/vgaldino01-glitch"
+             target="_blank" rel="noopener">
+            Explorar projeto ↗
+          </a>
+
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- 04 - HABILIDADES -->
+
+<section class="section" id="habilidades">
+
+  <div class="container">
+
+    <div class="section-heading">
+      <span class="eyebrow">Tecnologias e conhecimentos</span>
+      <h2 class="section-title">
+        Minhas <span>habilidades</span>
+      </h2>
+      <p class="section-description">
+        Conhecimentos que fazem parte da minha formação
+        e do meu desenvolvimento profissional.
+      </p>
+    </div>
+
+    <div class="skills-layout">
+
+      <div class="skill-panel">
+
+        <div class="skill-panel-heading">
+
+          <img
+            src="./assets/Botao%20brilhante%20com%20logo%20Python.png"
+            alt="Python"
+            loading="lazy"
+          >
+
+          <div>
+            <h3>Programação</h3>
+            <p>Fundamentos e desenvolvimento</p>
+          </div>
+
+        </div>
+
+        <div class="skill-list">
+          <span class="skill-pill">Python</span>
+          <span class="skill-pill">Lógica de programação</span>
+          <span class="skill-pill">Algoritmos</span>
+          <span class="skill-pill">HTML</span>
+          <span class="skill-pill">CSS</span>
+        </div>
+
+      </div>
+
+
+      <div class="skill-panel">
+
+        <div class="skill-panel-heading">
+
+          <img
+            src="./assets/Escudo%20Neon%20de%20Seguranca%20Retro.png"
+            alt="Escudo de segurança"
+            loading="lazy"
+          >
+
+          <div>
+            <h3>Cibersegurança</h3>
+            <p>Formação e fundamentos</p>
+          </div>
+
+        </div>
+
+        <div class="skill-list">
+          <span class="skill-pill">Segurança digital</span>
+          <span class="skill-pill">Segurança da informação</span>
+          <span class="skill-pill">Proteção de dados</span>
+          <span class="skill-pill">Fundamentos de segurança</span>
+        </div>
+
+      </div>
+
+
+      <div class="skill-panel">
+
+        <div class="skill-panel-heading">
+
+          <img
+            src="./assets/Adesivo%20Octocat%20Git%20Rosa%20e%20Roxo.png"
+            alt="GitHub"
+            loading="lazy"
+          >
+
+          <div>
+            <h3>Ferramentas</h3>
+            <p>Organização e desenvolvimento</p>
+          </div>
+
+        </div>
+
+        <div class="skill-list">
+          <span class="skill-pill">GitHub</span>
+          <span class="skill-pill">Git</span>
+          <span class="skill-pill">Projetos</span>
+          <span class="skill-pill">Versionamento</span>
+        </div>
+
+      </div>
+
+
+      <div class="skill-panel">
+
+        <div class="skill-panel-heading">
+
+          <img
+            src="./assets/Gr%C3%A1fico%20de%20crescimento%20com%20brilhos.png"
+            alt="Crescimento"
+            loading="lazy"
+          >
+
+          <div>
+            <h3>Desenvolvimento pessoal</h3>
+            <p>Aprendizado contínuo</p>
+          </div>
+
+        </div>
+
+        <div class="skill-list">
+          <span class="skill-pill">Resolução de problemas</span>
+          <span class="skill-pill">Aprendizado contínuo</span>
+          <span class="skill-pill">Organização</span>
+          <span class="skill-pill">Criatividade</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- 05 - IDENTIDADE CYBER -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="cyber-feature">
+
+      <div>
+
+        <span class="eyebrow">Meu universo de estudos</span>
+
+        <h3>
+          Tecnologia com propósito.<br>
+          <span class="gradient-text">Segurança com conhecimento.</span>
+        </h3>
+
+        <p>
+          A cibersegurança é uma área em constante evolução.
+          Minha jornada envolve aprender, experimentar e desenvolver
+          conhecimentos para compreender os desafios da segurança digital.
+        </p>
+
+      </div>
+
+      <!-- GATO COM HEADSET: IDENTIDADE CYBER -->
+      <img
+        src="./assets/F85CF7EC-A1FD-4E3A-A87D-239617FCED57.png"
+        alt="Gatinho com headset e notebook de segurança digital"
+        loading="lazy"
+      >
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- 06 - JORNADA -->
+
+<section class="section" id="jornada">
+
+  <div class="container">
+
+    <div class="section-heading">
+      <span class="eyebrow">Evolução e aprendizado</span>
+      <h2 class="section-title">
+        Minha <span>jornada</span>
+      </h2>
+    </div>
+
+    <div class="journey">
+
+      <div class="journey-item">
+
+        <h3>Formação em Cibersegurança</h3>
+
+        <p>
+          Graduanda em Cibersegurança, desenvolvendo conhecimentos
+          em tecnologia, programação e segurança da informação.
+        </p>
+
+      </div>
+
+
+      <div class="journey-item">
+
+        <h3>Projetos e prática</h3>
+
+        <p>
+          Desenvolvimento de projetos acadêmicos e práticas
+          de programação, com registro da evolução no GitHub.
+        </p>
+
+      </div>
+
+
+      <div class="journey-item">
+
+        <h3>Inglês — EF SET</h3>
+
+        <p>
+          Avaliação de proficiência em inglês com resultado
+          geral A2 – Elementary.
+        </p>
+
+        <div class="certificate">
+
+          <div class="certificate-top">
+            <h3>EF SET English Certificate</h3>
+            <span class="certificate-level">A2 – Elementary</span>
+          </div>
+
+          <div class="certificate-score">38/100</div>
+
+          <div class="certificate-details">
+
+            <div>
+              <strong>Reading · B2</strong>
+              <span>Upper Intermediate · 57/100</span>
+            </div>
+
+            <div>
+              <strong>Listening · A0</strong>
+              <span>Novice · 18/100</span>
+            </div>
+
+          </div>
+
+          <small>
+            Certificação realizada em 23 de novembro de 2026.
+          </small>
+
+          <div style="margin-top:20px">
+            <a
+              href="https://cert.efset.org/KPmmQU"
+              target="_blank"
+              rel="noopener"
+              class="button button-primary">
+              Consultar certificado oficial ↗
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="journey-item">
+
+        <h3>Próximos desafios</h3>
+
+        <p>
+          Continuar ampliando conhecimentos, aperfeiçoando habilidades
+          e construindo experiências na área de tecnologia.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- 07 - CONTATO -->
+
+<section class="section" id="contato">
+
+  <div class="container">
+
+    <div class="contact-card">
+
+      <span class="eyebrow">Conexões e oportunidades</span>
+
+      <h3>
+        Vamos construir algo <span class="gradient-text">juntos?</span>
+      </h3>
+
+      <p>
+        Obrigada por conhecer meu portfólio.
+        Estou aberta a conexões, troca de conhecimentos
+        e oportunidades de aprendizado na área de tecnologia
+        e cibersegurança.
+      </p>
+
+      <div class="contact-buttons">
+
+        <a
+          href="https://github.com/vgaldino01-glitch"
+          target="_blank"
+          rel="noopener"
+          class="button button-primary">
+          GitHub ↗
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/val%C3%A9ria-galdino-ferreira-666b1762/"
+          target="_blank"
+          rel="noopener"
+          class="button button-secondary">
+          LinkedIn ↗
         </a>
 
       </div>
-
-    </div>
-
-    <div class="timeline-item">
-
-      <h3>🚀 Evolução profissional</h3>
-
-      <p>
-        Em constante aprendizado, buscando novos conhecimentos,
-        desafios e oportunidades na área de tecnologia e segurança.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- CONTATO -->
-
-<section id="contato">
-
-  <h2 class="section-title">
-    Vamos nos <span>conectar?</span>
-  </h2>
-
-  <div class="contact-box">
-
-    <h3>Obrigada por visitar meu portfólio! 💜</h3>
-
-    <p>
-      Estou aberta a conexões, troca de conhecimentos e
-      oportunidades de aprendizado na área de tecnologia
-      e cibersegurança.
-    </p>
-
-    <div class="buttons" style="justify-content:center">
-
-      <a href="https://github.com/vgaldino01-glitch"
-         target="_blank" rel="noopener"
-         class="btn btn-primary">
-        GitHub
-      </a>
-
-      <a href="https://www.linkedin.com/in/valéria-galdino-ferreira-666b1762/"
-         target="_blank" rel="noopener"
-         class="btn btn-outline">
-        LinkedIn
-      </a>
 
     </div>
 
@@ -1053,26 +1626,31 @@ footer span {
 <footer>
 
   <p>
-    Desenvolvido com <span>♥</span> por Valéria Galdino
+    Desenvolvido com <strong>♥</strong> por Valéria Galdino
   </p>
 
   <p style="margin-top:8px">
-    © 2026 | Portfólio de Cibersegurança
+    © 2026 · Portfólio de Cibersegurança
   </p>
 
 </footer>
 
+
 <script>
-const menuBtn = document.getElementById('menuBtn');
+const menuButton = document.getElementById('menuButton');
 const navLinks = document.getElementById('navLinks');
 
-menuBtn.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
+menuButton.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('active');
+  menuButton.setAttribute('aria-expanded', isOpen);
+  menuButton.textContent = isOpen ? '✕' : '☰';
 });
 
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('active');
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.textContent = '☰';
   });
 });
 </script>
